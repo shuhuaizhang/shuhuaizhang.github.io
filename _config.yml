@@ -42,7 +42,7 @@ additional_links:
 
 # About Section
 # about_title: About Me (Use this to override about section title)
-about_profile_image: Directory of profile image (eg. images/profile.jpg)
+about_profile_image: /portfolio.png
 about_content: | # this will include new lines to allow paragraphs
   I am a 0 year Ph.D student at PBC School of Finance, Tsinghua University. I obtained my Bachelor's Degree in Economics / Psychology at Tsinghua University in 2018. 
   
