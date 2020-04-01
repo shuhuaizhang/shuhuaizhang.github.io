@@ -48,22 +48,16 @@ about_content: | # this will include new lines to allow paragraphs
   
   My research interests include <mark>Behavioral Economics</mark> and <mark>Behavioral Finance</mark>. 
   
-  Write an awesome description about yourself here, this supports markdown, so you can add [links](http://foobar.com) and highlight things <mark>like this</mark>.
-
-  You can even add paragraphs by using empty lines like this and add anything else markdown supports such as
-    - Lists
-    - Tables
-    - <a href="google.com">Links</a>
-    - Images
+  Here is my [CV](https://drive.google.com/file/d/1xsw1nfyQzpToSQbySktxu2YPEyzoFstQ/view?usp=sharing).
 
 # Projects Section
-# projects_title: Projects #(Use this to override about projects section title)
-
-# Experience Section
-# experience_title: Experience #(Use this to override about experience section title)
+projects_title: Research #(Use this to override about projects section title)
 
 # Education Section
-# education_title: Education #(Use this to override about education section title)
+education_title: Education #(Use this to override about education section title)
+
+# Experience Section
+experience_title: Experience #(Use this to override about experience section title)
 
 # More Section
 # more_title: A Little More About Me #(Use this to override about more section title)
