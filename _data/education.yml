@@ -1,27 +1,29 @@
 # Education Template
 - layout: left
   name: Tsinghua University, PBC School of Finance
-  dates: 2014 - 2018
+  dates: 2018 - 2020
   qualification: M.S. in Finance
-  quote: >
-    Short institution or course description (optional)
-  description: | # this will include new lines to allow paragraphs
-    Description of qualification
+  #quote: >
+  #  Short institution or course description (optional)
+  #description: | # this will include new lines to allow paragraphs
+  #  Description of qualification
 
 - layout: left
-  name: Tsinghua University, Schhol of Economics and Management
+  name: Tsinghua University, School of Economics and Management
   dates: 2014 - 2018
   qualification: B.A. in Economics and Finance
-  quote: >
-    Short institution or course description (optional)
+  #quote: >
+  #  Short institution or course description (optional)
   description: | # this will include new lines to allow paragraphs
-    Description of qualification
+    - Grade Point Average: 88/100, Grade Point Rank: 4/177(top 3%)
+    
+    - Security Profession Qualification Certificate
 
 - layout: left
   name: Tsinghua University
   dates: 2015 - 2018
   qualification: B.S. in Psychology
-  quote: >
-    Short institution or course description (optional)
-  description: | # this will include new lines to allow paragraphs
-    Description of qualification
+  #quote: >
+  #  Short institution or course description (optional)
+  #description: | # this will include new lines to allow paragraphs
+  #  Description of qualification
