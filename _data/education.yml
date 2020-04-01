@@ -1,8 +1,26 @@
 # Education Template
 - layout: left
-  name: Institution name
-  dates: Date Range (eg. 2016 - 2019)
-  qualification: Qualifications (eg. BA Performing Arts)
+  name: Tsinghua University, PBC School of Finance
+  dates: 2014 - 2018
+  qualification: M.S. in Finance
+  quote: >
+    Short institution or course description (optional)
+  description: | # this will include new lines to allow paragraphs
+    Description of qualification
+
+- layout: left
+  name: Tsinghua University, Schhol of Economics and Management
+  dates: 2014 - 2018
+  qualification: B.A. in Economics and Finance
+  quote: >
+    Short institution or course description (optional)
+  description: | # this will include new lines to allow paragraphs
+    Description of qualification
+
+- layout: left
+  name: Tsinghua University
+  dates: 2015 - 2018
+  qualification: B.S. in Psychology
   quote: >
     Short institution or course description (optional)
   description: | # this will include new lines to allow paragraphs
