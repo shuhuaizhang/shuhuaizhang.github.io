@@ -4,10 +4,7 @@ repository: Git repository where your resume will be hosted, only required if yo
 
 # Personal info
 name: Shuhuai Zhang
-title: |
-  Ph.D. Student in Finance
-  
-  Tsinghua University
+title: Ph.D. Student in Finance
 email: zhangshh.18@pbcsf.tsinghua.edu.cn
 website: shuhuaizhang.github.io
 
