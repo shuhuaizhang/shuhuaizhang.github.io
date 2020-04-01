@@ -1,10 +1,10 @@
 # Project template
 - layout: top-middle
-  name: Understanding Dropouts in MOOCs
-  link: with Wenzheng Feng, Jie Tang, Tracy Xiao Liu and Jian Guan, in Proceedings of the 33rd AAAI Conference on Artificial Intelligence (AAAI'19)
+  name: [Understanding Dropouts in MOOCs](
+  #link: with Wenzheng Feng, Jie Tang, Tracy Xiao Liu and Jian Guan, in Proceedings of the 33rd AAAI Conference on Artificial Intelligence (AAAI'19)
   #github: Github page for project (eg. sproogen/modern-resume-theme)(optional)
   quote: >
-    Short overview of the project (optional)
+    with Wenzheng Feng, Jie Tang, Tracy Xiao Liu and Jian Guan, in Proceedings of the 33rd AAAI Conference on Artificial Intelligence (AAAI'19)
   #description: | # this will include new lines to allow paragraphs
   #  Description about the work on/with the project
     
