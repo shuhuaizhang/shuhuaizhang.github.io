@@ -9,21 +9,12 @@
   #  Description of qualification
 
 - layout: left
-  name: Tsinghua University, School of Economics and Management
+  name: Tsinghua University
   dates: 2014 - 2018
-  qualification: B.A. in Economics and Finance
+  qualification: B.A. in Economics and Finance B.S. in Psychology
   #quote: >
   #  Short institution or course description (optional)
   description: | # this will include new lines to allow paragraphs
     - Grade Point Average: 88/100, Grade Point Rank: 4/177(top 3%)
     
     - Security Profession Qualification Certificate
-
-- layout: left
-  name: Tsinghua University
-  dates: 2015 - 2018
-  qualification: B.S. in Psychology
-  #quote: >
-  #  Short institution or course description (optional)
-  #description: | # this will include new lines to allow paragraphs
-  #  Description of qualification
