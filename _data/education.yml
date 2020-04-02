@@ -5,8 +5,8 @@
   qualification: M.S. in Finance
   #quote: >
   #  Short institution or course description (optional)
-  #description: | # this will include new lines to allow paragraphs
-  #  Description of qualification
+  description: | # this will include new lines to allow paragraphs
+     - Transferred to Ph.D. Program in 2020
 
 - layout: left
   name: Tsinghua University
@@ -16,6 +16,6 @@
   #quote: >
   #  Short institution or course description (optional)
   description: | # this will include new lines to allow paragraphs
-    - Grade Point Average: 88/100, Grade Point Rank: 4/177(top 3%)
+    - Grade Point Rank: 4/177(top 3%)
     
     - Security Profession Qualification Certificate
