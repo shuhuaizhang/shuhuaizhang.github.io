@@ -44,9 +44,9 @@ darkmode: false
 # about_title: About Me (Use this to override about section title)
 about_profile_image: /portfolio.png
 about_content: | # this will include new lines to allow paragraphs
-  I am a 0 year Ph.D student at PBC School of Finance, Tsinghua University.
+  I am currently a forthcoming Ph.D student at PBC School of Finance, Tsinghua University.
   
-  My research interests include <mark>Behavioral Economics</mark> and <mark>Behavioral Finance</mark>. 
+  My research interests include <mark>Behavioral Economics</mark> and <mark>Behavioral Finance</mark>, as well as <mark>applications of Machine Learning</mark>.
   
   Here is my [CV](https://drive.google.com/file/d/1xsw1nfyQzpToSQbySktxu2YPEyzoFstQ/view?usp=sharing).
 
@@ -62,10 +62,13 @@ experience_title: Experience #(Use this to override about experience section tit
 # More Section
 # more_title: A Little More About Me #(Use this to override about more section title)
 more_content: | # this will include new lines to allow paragraphs
-  This is where you can write a little more about yourself. You could title this section **Interests** and include some of your other interests.
+  Alongside my interests in economic research, some of my other interests are,
+  
+   - Classical Music
+     - I have practiced violin playing for 16 years and used to be the chair violin of Tsinghua University Symphony Orchestra. I really enjoy playing chamber music with my friends. 
 
-  Or you could title it **Skills** and write a bit more about things that make you more desirable, like *leadership* or *teamwork*
-
+   - Literature
+     - I love serious literature reading and writing, organizing my personal WeChat Platform.
 # Footer
 footer_show_references: true
 
