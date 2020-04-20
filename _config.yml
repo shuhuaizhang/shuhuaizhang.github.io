@@ -44,7 +44,9 @@ darkmode: false
 # about_title: About Me (Use this to override about section title)
 about_profile_image: /portfolio.png
 about_content: | # this will include new lines to allow paragraphs
-  I am currently a forthcoming Ph.D student at PBC School of Finance, Tsinghua University.
+  I am currently a Ph.D student (Successive Postgraduate and Doctoral Program) at PBC School of Finance, Tsinghua University. 
+  I obtained my Bachelor's degree at School of Economics and Management, Tsinghua University, supervised by Prof. [Tracy Xiao Liu](https://tracyxliu.com/),
+  and will finish my Master's study at PBC School of Finance, Tsinghua University on June 2020, supervised by Prof. [Jianfeng Yu](https://sites.google.com/site/yujianfengaca/).
   
   My research interests include <mark>Behavioral Economics</mark> and <mark>Behavioral Finance</mark>, as well as <mark>Applications of Machine Learning</mark>.
   
@@ -64,12 +66,12 @@ experience_title: Experience #(Use this to override about experience section tit
 more_content: | # this will include new lines to allow paragraphs
   Alongside my interests in economic research, some of my other interests are,
   
-   - Classical Music: I have practiced violin playing for 16 years and used to be the chair violin of Tsinghua University Symphony Orchestra. I really enjoy playing chamber music with my friends. Check our performance here, 
+   - Classical Music: I have practiced violin playing for 16 years and used to be the chair violin of Tsinghua University Symphony Orchestra. I really enjoy playing chamber music with my friends. Check our performance here! 
      - 2017 TUSO Chamber Music Concert, with Miaoyan Zhang, Yingran Zhang and Jiasheng Zhang, [Primavera Portena by Astor Piazzolla](https://www.bilibili.com/video/BV1Ux411v7W7?p=13)
 
    - Literature: I am interested in serious literature reading and writing.
      
-  Updated: 2020.04.02
+  Updated: 2020.04.20
 # Footer
 footer_show_references: true
 
