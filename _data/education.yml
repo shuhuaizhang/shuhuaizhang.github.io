@@ -1,12 +1,14 @@
 # Education Template
 - layout: left
   name: Tsinghua University, PBC School of Finance
-  dates: 2018 - 2020
-  qualification: M.S. in Finance
+  dates: 2018 - 
+  qualification: Ph.D. in Finance
   #quote: >
   #  Short institution or course description (optional)
   description: | # this will include new lines to allow paragraphs
-     - Transferred to Ph.D. Program in 2020
+     - Successive Postgraduate and Doctoral Program, will finish Master's study on June 2020.
+     
+     - Main Courses: Advanced Microeconomics/Macroeconomics/Econometrics, Advanced Theory of Capital Markets, Empirical Asset Pricing， Behavioral Finance(A+), Advanced Applied Mathematical Statistics, Statistical Learning Theory and Applications 
 
 - layout: left
   name: Tsinghua University
@@ -16,6 +18,8 @@
   #quote: >
   #  Short institution or course description (optional)
   description: | # this will include new lines to allow paragraphs
+    - Thesis: Improve Online Learning via Informational Intervention: An Experiment on MOOCs
+ 
     - Grade Point Rank: 4/177(top 3%)
     
     - Security Profession Qualification Certificate
