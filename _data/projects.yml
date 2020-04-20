@@ -17,6 +17,28 @@
     Experiments on two large datasets show that the proposed method achieves better performance than several state-of-the-art methods. 
     The proposed method model has been deployed on a real system to help improve user retention.
     
+- layout: top-middle
+  name: Mispricing Network
+  #link: with Wenzheng Feng, Jie Tang, Tracy Xiao Liu and Jian Guan, in Proceedings of the 33rd AAAI Conference on Artificial Intelligence (AAAI'19)
+  #github: Github page for project (eg. sproogen/modern-resume-theme)(optional)
+  quote: >
+    Work in Progress
+  description: | # this will include new lines to allow paragraphs
+    **Abstract**: This paper investigated how mispricing of stocks in U.S. stock markets interacts with each other. using the mispricing score(Stambaugh et al., 2015) constructed using 11 anomalies that cannot be explained by Fama-French 3 Factors model(Fama and French, 1993),
+     I constructed mispricing networks using U.S. stock market data from 1966 to 2016. A bipartite graph structure was found. According to positions of stocks in networks, I constructed a long-short strategy that could possibly earn abnormal returns. 
+ 
+ - layout: top-middle
+  name: Sound Symbolism and Company Names
+  #link: with Wenzheng Feng, Jie Tang, Tracy Xiao Liu and Jian Guan, in Proceedings of the 33rd AAAI Conference on Artificial Intelligence (AAAI'19)
+  #github: Github page for project (eg. sproogen/modern-resume-theme)(optional)
+  quote: >
+    Work in Progress
+  description: | # this will include new lines to allow paragraphs
+    **Abstract**: Sound symbolism suggests that there is a systemic and non-arbitrary relationship between the sound of a word and its meaning. 
+    The name of an object could directly affect the preference of people via its sound. Sound symbolism has been widely studied in psychology, and this paper makes the first attempt to examine how sound symbolism affects investors' decisions in financial markets. 
+    I found that companies with sharp names tend have relatively lower return and higher market turnover, which could be the result of overinvestment. 
+    Relationship between company names and the fundamentals of stocks were found as well.
+ 
 #- layout: top-middle
 #  name: Project name
 #  link: Link to project (eg. sproogen.github.io/modern-resume-theme)(optional)
