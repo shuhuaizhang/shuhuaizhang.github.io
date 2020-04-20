@@ -27,14 +27,16 @@
     **Abstract**: This paper investigated how mispricing of stocks in U.S. stock markets interacts with each other. Using the mispricing score (Stambaugh et al., 2015) based on 11 anomalies that cannot be explained by Fama-French 3 Factors model (Fama and French, 1993),
      I constructed mispricing networks using U.S. stock market data from 1966 to 2016. A bipartite graph structure was found. According to positions of stocks in networks, I constructed a long-short strategy that could possibly earn abnormal returns. 
  
-  - layout: top-middle
-  name: Sound Symbolism and Company Names
+ - layout: top-middle
+  name: Mispricing Network
   #link: with Wenzheng Feng, Jie Tang, Tracy Xiao Liu and Jian Guan, in Proceedings of the 33rd AAAI Conference on Artificial Intelligence (AAAI'19)
   #github: Github page for project (eg. sproogen/modern-resume-theme)(optional)
   quote: >
     Work in Progress
   description: | # this will include new lines to allow paragraphs
-    **Abstract**: Sound symbolism
+    **Abstract**: This paper investigated how mispricing of stocks in U.S. stock markets interacts with each other. Using the mispricing score (Stambaugh et al., 2015) based on 11 anomalies that cannot be explained by Fama-French 3 Factors model (Fama and French, 1993),
+     I constructed mispricing networks using U.S. stock market data from 1966 to 2016. A bipartite graph structure was found. According to positions of stocks in networks, I constructed a long-short strategy that could possibly earn abnormal returns. 
+
     
 #- layout: top-middle
 #  name: Project name
