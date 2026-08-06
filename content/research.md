@@ -12,6 +12,7 @@ year: 2026
 authors: with Erica X.N. Li, Tracy Xiao Liu, Bowen Zheng, and Rui Zhu
 venue: 《经济学（季刊）》
 citation: 26(4), 1102–1121
+link.CNKI: https://kns.cnki.net/kcms2/article/abstract?v=CK5qQJ1_U0zD-rkgwoh5GPnKZfhP228TdxV-YUcEo5Yr-y1yv8NGtwZ02wyrwfwjbfXBmfH61k_nFDGikQFwCHWXxhP4Sn4vhdvy4UJeKf6gitV_gzKppFGJgyIms9Z-M03Hi4N7QM--aDXevJeljHgyPvEafDtKLEGSLVawLj1TuQ41puhGAQ==&uniplatform=NZKPT&language=CHS 
 
 # Working Papers
 
