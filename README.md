@@ -16,6 +16,6 @@ Each research or performance item starts with `##`. To add an item, copy an exis
 
 Run `npm run dev`, then open the Local URL shown in the terminal. The website rebuilds when a content or style file changes.
 
-## Publishing later
+## Publishing
 
-The included GitHub Pages workflow publishes the site automatically after the project is placed in a GitHub repository and Pages is configured to use GitHub Actions. Nothing is published by the local prototype.
+The live site is available at https://shuhuaizhang.github.io/. Pushing changes to the `main` branch runs the included GitHub Pages workflow and updates the site automatically.
