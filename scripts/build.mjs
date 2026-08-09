@@ -79,8 +79,7 @@ function nav(base, active, variant = "academic") {
       <a class="skip-link" href="#main">Skip to content</a>
       <div class="header-inner">
         <a class="wordmark" href="${base}" aria-label="Shuhuai Zhang, home">
-          <span class="wordmark-mark">SZ</span>
-          <span class="wordmark-name">Shuhuai Zhang</span>
+          Shuhuai Zhang
         </a>
         <nav class="site-nav" aria-label="Primary navigation">
           ${links.map(([id, label, href]) => `<a${id === active ? ' aria-current="page"' : ""} href="${href}">${label}</a>`).join("")}
@@ -98,29 +97,49 @@ function footer(base, variant = "academic") {
     </footer>`;
 }
 
-function layout({ title, description, body, base = "./", active, variant = "academic", bodyClass = "" }) {
+function layout({ title, description, body, base = "./", active, variant = "academic", bodyClass = "", themeColor, heroImage, showFooter = true }) {
+  const resolvedThemeColor = themeColor ?? (variant === "music" ? "#24181f" : "#4f626b");
+
   return `<!doctype html>
 <html lang="en">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="${escapeHtml(description)}">
-    <meta name="theme-color" content="${variant === "music" ? "#eee5da" : "#f3f1ea"}">
+    <meta name="theme-color" content="${resolvedThemeColor}">
     <title>${escapeHtml(title)}</title>
+    <link rel="preload" href="${base}assets/fonts/archivo-latin.woff2" as="font" type="font/woff2" crossorigin>
+    ${variant === "music" ? `<link rel="preload" href="${base}assets/fonts/alegreya-latin.woff2" as="font" type="font/woff2" crossorigin>` : ""}
+    ${heroImage ? `<link rel="preload" href="${base}${heroImage}" as="image" fetchpriority="high">` : ""}
+    <script>document.documentElement.classList.add("js")</script>
     <link rel="stylesheet" href="${base}assets/styles.css">
+    <script src="${base}assets/site.js" defer></script>
   </head>
-  <body class="page page--${variant} ${bodyClass}">
+  <body class="page page--${variant} ${bodyClass}"><!--
+    THESIS: Two genuine registers share one precise line; this refuses the boxed portfolio hero and permanent side rail.
+    OWN-WORLD: Low-saturation slate blue and mineral blue structure academic pages; a painterly portrait enters only on About; aubergine, ivory, and apricot carry music. Full-width fields, square media, and ruled rows form the language.
+    STORY: Visitors identify Shuhuai Zhang, read his biography and research, then may enter a warmer musical register without leaving the same identity.
+    FIRST VIEWPORT: Transparent horizontal navigation stays inside the quiet left extension of each full-height canvas. About pairs biography with portrait; Research pairs a two-node selector with a scrolling archive; Another Me pairs its introduction with one performance at a time.
+    FORM: User-pinned Two Registers, One Line; grounded direction; seed c3c10a7f.
+    FINISH: unreviewed and undocumented is unfinished; this build ends with the finish review, the verdict, and DESIGN.md
+  -->
     ${nav(base, active, variant)}
     ${body}
-    ${footer(base, variant)}
+    ${showFooter ? footer(base, variant) : ""}
   </body>
 </html>`;
+}
+
+function externalArrow() {
+  return `<svg class="external-arrow" aria-hidden="true" viewBox="0 0 12 12" focusable="false">
+    <path d="M3 9 9 3M4 3h5v5" />
+  </svg>`;
 }
 
 function researchLinks(links = {}) {
   const entries = Object.entries(links);
   if (!entries.length) return "";
-  return `<div class="paper-links">${entries.map(([label, url]) => `<a href="${escapeHtml(url)}" target="_blank" rel="noreferrer">${escapeHtml(label)} <span aria-hidden="true">↗</span></a>`).join("")}</div>`;
+  return `<div class="paper-links">${entries.map(([label, url]) => `<a href="${escapeHtml(url)}" target="_blank" rel="noreferrer">${escapeHtml(label)} ${externalArrow()}</a>`).join("")}</div>`;
 }
 
 function homePage(profile) {
@@ -128,56 +147,73 @@ function homePage(profile) {
 
   const body = `
     <main id="main">
-      <section class="home-hero shell" aria-labelledby="home-title">
-        <h1 id="home-title">${escapeHtml(meta.name)}</h1>
-        <p class="email">${escapeHtml(meta.email)}</p>
-      </section>
-
-      <section class="home-about" aria-label="Biography">
-        <div class="home-about-inner shell">
-          <div class="about-copy">
-            ${profile.paragraphs.map((paragraph) => `<p>${escapeHtml(paragraph)}</p>`).join("")}
+      <section class="home-hero" aria-labelledby="home-title">
+        <div class="home-hero-inner shell">
+          <div class="home-copy">
+            <h1 id="home-title"><span>Shuhuai</span><span>Zhang</span></h1>
+            <div class="home-profile" aria-label="Biography">
+              ${profile.paragraphs.map((paragraph) => `<p>${escapeHtml(paragraph)}</p>`).join("")}
+              <p class="email">${escapeHtml(meta.email)}</p>
+            </div>
           </div>
         </div>
       </section>
     </main>`;
 
   return layout({
-    title: `${meta.name} · Economist`,
+    title: meta.name,
     description: `${meta.name}, Assistant Professor of Economics at Central University of Finance and Economics.`,
     body,
     active: "about",
     bodyClass: "page--home",
+    themeColor: "#5d7078",
+    heroImage: "assets/hero-portrait-wide.jpg",
+    showFooter: false,
   });
 }
 
 function researchPage(profile, groups) {
+  const groupId = (title) => title.toLowerCase().replaceAll(/[^a-z0-9]+/g, "-").replaceAll(/^-|-$/g, "");
   const body = `
-    <main id="main">
-      <section class="page-intro shell">
-        <h1>Research</h1>
-      </section>
-      <div class="research-archive shell">
-        ${groups.map((group) => `
-          <section class="research-group" aria-labelledby="${group.title.toLowerCase().replaceAll(/[^a-z0-9]+/g, "-")}">
-            <div class="research-group-heading">
-              <h2 id="${group.title.toLowerCase().replaceAll(/[^a-z0-9]+/g, "-")}">${escapeHtml(group.title)}</h2>
-            </div>
-            <ol class="paper-list">
-              ${group.entries.map((paper) => `
-                <li class="paper-item">
-                  <div class="paper-main">
-                    <h3>${escapeHtml(paper.title)}</h3>
-                    <p>${escapeHtml(paper.authors)}</p>
-                    ${paper.venue ? `<p class="paper-venue"><em>${escapeHtml(paper.venue)}</em>${paper.year ? `, ${escapeHtml(paper.year)}` : ""}${paper.citation ? `, ${escapeHtml(paper.citation)}` : ""}</p>` : ""}
-                    ${paper.status ? `<p class="paper-venue"><em>${escapeHtml(paper.status)}</em></p>` : ""}
-                  </div>
-                  <div class="paper-side">
-                    ${researchLinks(paper.links)}
-                  </div>
-                </li>`).join("")}
-            </ol>
-          </section>`).join("")}
+    <main id="main" class="research-canvas" data-research-page>
+      <div class="research-canvas-inner shell">
+        <section class="research-rail" aria-labelledby="research-title">
+          <h1 id="research-title">Research</h1>
+          <div class="research-tabs" role="tablist" aria-label="Research categories">
+            ${groups.map((group, index) => {
+              const id = groupId(group.title);
+              return `<button class="research-tab${index === 0 ? " is-active" : ""}" id="research-tab-${id}" type="button" role="tab" aria-selected="${index === 0 ? "true" : "false"}" aria-controls="research-panel-${id}" tabindex="${index === 0 ? "0" : "-1"}" data-research-tab="${id}">
+                <span class="research-tab-node" aria-hidden="true"></span>
+                <span>${escapeHtml(group.title)}</span>
+              </button>`;
+            }).join("")}
+          </div>
+        </section>
+
+        <div class="research-reading" data-research-reading>
+          ${groups.map((group, index) => {
+            const id = groupId(group.title);
+            return `<section class="research-panel${index === 0 ? " is-active" : ""}" id="research-panel-${id}" role="tabpanel" aria-labelledby="research-tab-${id}" data-research-panel="${id}">
+              <header class="research-panel-heading">
+                <h2>${escapeHtml(group.title)}</h2>
+              </header>
+              <ol class="paper-list">
+                ${group.entries.map((paper) => `
+                  <li class="paper-item">
+                    <div class="paper-main">
+                      <h3>${escapeHtml(paper.title)}</h3>
+                      <p>${escapeHtml(paper.authors)}</p>
+                      ${paper.venue ? `<p class="paper-venue"><em>${escapeHtml(paper.venue)}</em>${paper.year ? `, ${escapeHtml(paper.year)}` : ""}${paper.citation ? `, ${escapeHtml(paper.citation)}` : ""}</p>` : ""}
+                      ${paper.status ? `<p class="paper-venue"><em>${escapeHtml(paper.status)}</em></p>` : ""}
+                    </div>
+                    <div class="paper-side">
+                      ${researchLinks(paper.links)}
+                    </div>
+                  </li>`).join("")}
+              </ol>
+            </section>`;
+          }).join("")}
+        </div>
       </div>
     </main>`;
 
@@ -187,14 +223,17 @@ function researchPage(profile, groups) {
     body,
     base: "../",
     active: "research",
-    bodyClass: "page--research",
+    variant: "research",
+    themeColor: "#687b83",
+    heroImage: "assets/research-background.jpg",
+    showFooter: false,
   });
 }
 
 function performanceFrame(performance) {
   return `<div class="video-frame">
     <iframe
-      src="${escapeHtml(performance.embed)}"
+      data-src="${escapeHtml(performance.embed)}"
       title="Performance video: ${escapeHtml(performance.title)}"
       loading="lazy"
       allow="autoplay; encrypted-media; picture-in-picture"
@@ -207,35 +246,47 @@ function musicPage(profile, performances) {
   const entries = performances[0]?.entries || [];
   const meta = profile.meta;
   const body = `
-    <main id="main">
-      <section class="music-hero shell" aria-labelledby="music-title">
-        <div class="music-title-grid">
-          <div>
-            <h1 id="music-title">Another Me</h1>
-          </div>
+    <main id="main" class="music-canvas">
+      <div class="music-canvas-inner shell">
+        <section class="music-rail" aria-labelledby="music-title">
+          <h1 id="music-title"><span>Another</span><span>Me</span></h1>
           <div class="music-intro">
             <p>I am a violinist. I was at the ${escapeHtml(meta.orchestra)} from ${escapeHtml(meta.orchestra_years)}, serving as orchestra chair during 2017–2018.</p>
             <p>Here are recordings of some of my previous performances.</p>
           </div>
-        </div>
-      </section>
+        </section>
 
-      <section class="performance-archive shell" aria-label="Performance recordings">
-        <ol class="performance-list">
-          ${entries.map((performance) => `
-            <li class="performance-item">
-              <div class="performance-media">
-                ${performanceFrame(performance)}
-              </div>
-              <div class="performance-copy">
-                <p class="performance-year">${escapeHtml(performance.year)}</p>
-                <h3>${escapeHtml(performance.title)}</h3>
-                ${performance.detail ? `<p class="performance-detail">${escapeHtml(performance.detail)}</p>` : ""}
-                <p class="performance-credit">${escapeHtml(performance.credit)}</p>
-              </div>
-            </li>`).join("")}
-        </ol>
-      </section>
+        <section class="performance-carousel" aria-label="Performance recordings" aria-roledescription="carousel" tabindex="0" data-performance-carousel>
+          <div class="carousel-viewport" data-carousel-viewport>
+            <ol class="performance-slides">
+              ${entries.map((performance, index) => `
+                <li class="performance-slide${index === 0 ? " is-active" : ""}" aria-label="${index + 1} of ${entries.length}" aria-roledescription="slide" data-performance-slide>
+                  <div class="performance-media">
+                    ${performanceFrame(performance)}
+                  </div>
+                  <div class="performance-copy">
+                    <p class="performance-year">${escapeHtml(performance.year)}</p>
+                    <h3>${escapeHtml(performance.title)}</h3>
+                    ${performance.detail ? `<p class="performance-detail">${escapeHtml(performance.detail)}</p>` : ""}
+                    <p class="performance-credit">${escapeHtml(performance.credit)}</p>
+                  </div>
+                </li>`).join("")}
+            </ol>
+          </div>
+
+          <div class="carousel-controls">
+            <button class="carousel-button" type="button" aria-label="Previous performance" data-carousel-previous>
+              <svg aria-hidden="true" viewBox="0 0 24 24" focusable="false"><path d="m14.5 5-7 7 7 7" /></svg>
+            </button>
+            <p class="carousel-status" aria-live="polite" aria-atomic="true">
+              <span data-carousel-current>01</span><span aria-hidden="true"> / </span><span>${String(entries.length).padStart(2, "0")}</span>
+            </p>
+            <button class="carousel-button" type="button" aria-label="Next performance" data-carousel-next>
+              <svg aria-hidden="true" viewBox="0 0 24 24" focusable="false"><path d="m9.5 5 7 7-7 7" /></svg>
+            </button>
+          </div>
+        </section>
+      </div>
     </main>`;
 
   return layout({
@@ -245,6 +296,9 @@ function musicPage(profile, performances) {
     base: "../",
     active: "music",
     variant: "music",
+    themeColor: "#1d1826",
+    heroImage: "assets/another-me-background.jpg",
+    showFooter: false,
   });
 }
 
@@ -254,7 +308,7 @@ function notFoundPage(profile) {
       <p class="eyebrow">404</p>
       <h1>That page is off the score.</h1>
       <p>The page may have moved, or the link may be incomplete.</p>
-      <a class="text-link" href="./">Return home <span aria-hidden="true">↗</span></a>
+      <a class="text-link" href="./">Return home ${externalArrow()}</a>
     </main>`;
   return layout({ title: `Page not found · ${profile.meta.name}`, description: "Page not found.", body, active: "" });
 }
@@ -281,7 +335,7 @@ await Promise.all([
   writeFile(path.join(distDir, "404.html"), notFoundPage(profile)),
   writeFile(path.join(distDir, ".nojekyll"), ""),
   writeFile(path.join(distDir, "robots.txt"), "User-agent: *\nAllow: /\n"),
-  cp(path.join(projectRoot, "src/assets/styles.css"), path.join(distDir, "assets/styles.css")),
+  cp(path.join(projectRoot, "src/assets"), path.join(distDir, "assets"), { recursive: true }),
 ]);
 
 console.log(`Built ${research.flatMap((group) => group.entries).length} research entries and ${performances[0]?.entries.length || 0} performances.`);

@@ -1,0 +1,620 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-08-09T16:26:27Z",
+  "title": "Design System: Shuhuai Zhang Personal Website",
+  "extensions": {
+    "colorMeta": {
+      "academic-slate": {
+        "role": "primary",
+        "displayName": "Academic Portrait Slate",
+        "canonical": "#5d7078",
+        "tonalRamp": [
+          "oklch(15% 0.026 225.2)",
+          "oklch(27% 0.026 225.2)",
+          "oklch(39% 0.026 225.2)",
+          "oklch(51% 0.026 225.2)",
+          "oklch(63% 0.026 225.2)",
+          "oklch(75% 0.026 225.2)",
+          "oklch(87% 0.026 225.2)",
+          "oklch(95% 0.026 225.2)"
+        ]
+      },
+      "academic-deep": {
+        "role": "primary",
+        "displayName": "Deep Academic Slate",
+        "canonical": "#42545c",
+        "tonalRamp": [
+          "oklch(15% 0.026 226.8)",
+          "oklch(27% 0.026 226.8)",
+          "oklch(39% 0.026 226.8)",
+          "oklch(51% 0.026 226.8)",
+          "oklch(63% 0.026 226.8)",
+          "oklch(75% 0.026 226.8)",
+          "oklch(87% 0.026 226.8)",
+          "oklch(95% 0.026 226.8)"
+        ]
+      },
+      "research-canvas": {
+        "role": "primary",
+        "displayName": "Research Canvas Slate",
+        "canonical": "#687b83",
+        "tonalRamp": [
+          "oklch(15% 0.026 225.2)",
+          "oklch(27% 0.026 225.2)",
+          "oklch(39% 0.026 225.2)",
+          "oklch(51% 0.026 225.2)",
+          "oklch(63% 0.026 225.2)",
+          "oklch(75% 0.026 225.2)",
+          "oklch(87% 0.026 225.2)",
+          "oklch(95% 0.026 225.2)"
+        ]
+      },
+      "research-image-base": {
+        "role": "primary",
+        "displayName": "Research Image Base",
+        "canonical": "#73858c",
+        "tonalRamp": [
+          "oklch(15% 0.024 223.2)",
+          "oklch(27% 0.024 223.2)",
+          "oklch(39% 0.024 223.2)",
+          "oklch(51% 0.024 223.2)",
+          "oklch(63% 0.024 223.2)",
+          "oklch(75% 0.024 223.2)",
+          "oklch(87% 0.024 223.2)",
+          "oklch(95% 0.024 223.2)"
+        ]
+      },
+      "mineral": {
+        "role": "primary",
+        "displayName": "Mineral Ground",
+        "canonical": "#e9eff0",
+        "tonalRamp": [
+          "oklch(15% 0.007 208.8)",
+          "oklch(27% 0.007 208.8)",
+          "oklch(39% 0.007 208.8)",
+          "oklch(51% 0.007 208.8)",
+          "oklch(63% 0.007 208.8)",
+          "oklch(75% 0.007 208.8)",
+          "oklch(87% 0.007 208.8)",
+          "oklch(95% 0.007 208.8)"
+        ]
+      },
+      "paper": {
+        "role": "neutral",
+        "displayName": "Paper White",
+        "canonical": "#f5f7f6",
+        "tonalRamp": [
+          "oklch(15% 0.002 165.1)",
+          "oklch(27% 0.002 165.1)",
+          "oklch(39% 0.002 165.1)",
+          "oklch(51% 0.002 165.1)",
+          "oklch(63% 0.002 165.1)",
+          "oklch(75% 0.002 165.1)",
+          "oklch(87% 0.002 165.1)",
+          "oklch(95% 0.002 165.1)"
+        ]
+      },
+      "ink": {
+        "role": "neutral",
+        "displayName": "Blue-Black Ink",
+        "canonical": "#18242b",
+        "tonalRamp": [
+          "oklch(15% 0.021 234.3)",
+          "oklch(27% 0.021 234.3)",
+          "oklch(39% 0.021 234.3)",
+          "oklch(51% 0.021 234.3)",
+          "oklch(63% 0.021 234.3)",
+          "oklch(75% 0.021 234.3)",
+          "oklch(87% 0.021 234.3)",
+          "oklch(95% 0.021 234.3)"
+        ]
+      },
+      "muted-slate": {
+        "role": "neutral",
+        "displayName": "Muted Slate",
+        "canonical": "#5c6d73",
+        "tonalRamp": [
+          "oklch(15% 0.023 221.1)",
+          "oklch(27% 0.023 221.1)",
+          "oklch(39% 0.023 221.1)",
+          "oklch(51% 0.023 221.1)",
+          "oklch(63% 0.023 221.1)",
+          "oklch(75% 0.023 221.1)",
+          "oklch(87% 0.023 221.1)",
+          "oklch(95% 0.023 221.1)"
+        ]
+      },
+      "research-metadata": {
+        "role": "neutral",
+        "displayName": "Research Metadata Slate",
+        "canonical": "#506168",
+        "tonalRamp": [
+          "oklch(15% 0.024 224.7)",
+          "oklch(27% 0.024 224.7)",
+          "oklch(39% 0.024 224.7)",
+          "oklch(51% 0.024 224.7)",
+          "oklch(63% 0.024 224.7)",
+          "oklch(75% 0.024 224.7)",
+          "oklch(87% 0.024 224.7)",
+          "oklch(95% 0.024 224.7)"
+        ]
+      },
+      "research-pane": {
+        "role": "primary",
+        "displayName": "Translucent Research Paper",
+        "canonical": "rgba(237, 242, 242, 0.91)",
+        "tonalRamp": [
+          "oklch(15% 0.005 197.1 / .91)",
+          "oklch(27% 0.005 197.1 / .91)",
+          "oklch(39% 0.005 197.1 / .91)",
+          "oklch(51% 0.005 197.1 / .91)",
+          "oklch(63% 0.005 197.1 / .91)",
+          "oklch(75% 0.005 197.1 / .91)",
+          "oklch(87% 0.005 197.1 / .91)",
+          "oklch(95% 0.005 197.1 / .91)"
+        ]
+      },
+      "nav-light-muted": {
+        "role": "neutral",
+        "displayName": "Navigation Paper",
+        "canonical": "rgba(245, 247, 246, 0.86)",
+        "tonalRamp": [
+          "oklch(15% 0.002 165.1 / .86)",
+          "oklch(27% 0.002 165.1 / .86)",
+          "oklch(39% 0.002 165.1 / .86)",
+          "oklch(51% 0.002 165.1 / .86)",
+          "oklch(63% 0.002 165.1 / .86)",
+          "oklch(75% 0.002 165.1 / .86)",
+          "oklch(87% 0.002 165.1 / .86)",
+          "oklch(95% 0.002 165.1 / .86)"
+        ]
+      },
+      "home-copy-muted": {
+        "role": "neutral",
+        "displayName": "Biography Paper",
+        "canonical": "rgba(245, 247, 246, 0.92)",
+        "tonalRamp": [
+          "oklch(15% 0.002 165.1 / .92)",
+          "oklch(27% 0.002 165.1 / .92)",
+          "oklch(39% 0.002 165.1 / .92)",
+          "oklch(51% 0.002 165.1 / .92)",
+          "oklch(63% 0.002 165.1 / .92)",
+          "oklch(75% 0.002 165.1 / .92)",
+          "oklch(87% 0.002 165.1 / .92)",
+          "oklch(95% 0.002 165.1 / .92)"
+        ]
+      },
+      "academic-focus": {
+        "role": "tertiary",
+        "displayName": "Academic Focus Clay",
+        "canonical": "#8f4f3a",
+        "tonalRamp": [
+          "oklch(15% 0.092 38.9)",
+          "oklch(27% 0.092 38.9)",
+          "oklch(39% 0.092 38.9)",
+          "oklch(51% 0.092 38.9)",
+          "oklch(63% 0.092 38.9)",
+          "oklch(75% 0.092 38.9)",
+          "oklch(87% 0.092 38.9)",
+          "oklch(95% 0.092 38.9)"
+        ]
+      },
+      "apricot": {
+        "role": "tertiary",
+        "displayName": "Apricot Accent",
+        "canonical": "#d38a68",
+        "tonalRamp": [
+          "oklch(15% 0.101 45.6)",
+          "oklch(27% 0.101 45.6)",
+          "oklch(39% 0.101 45.6)",
+          "oklch(51% 0.101 45.6)",
+          "oklch(63% 0.101 45.6)",
+          "oklch(75% 0.101 45.6)",
+          "oklch(87% 0.101 45.6)",
+          "oklch(95% 0.101 45.6)"
+        ]
+      },
+      "academic-line": {
+        "role": "neutral",
+        "displayName": "Academic Rule",
+        "canonical": "rgba(24, 36, 43, 0.24)",
+        "tonalRamp": [
+          "oklch(15% 0.021 234.3 / .24)",
+          "oklch(27% 0.021 234.3 / .24)",
+          "oklch(39% 0.021 234.3 / .24)",
+          "oklch(51% 0.021 234.3 / .24)",
+          "oklch(63% 0.021 234.3 / .24)",
+          "oklch(75% 0.021 234.3 / .24)",
+          "oklch(87% 0.021 234.3 / .24)",
+          "oklch(95% 0.021 234.3 / .24)"
+        ]
+      },
+      "light-line": {
+        "role": "neutral",
+        "displayName": "Light Field Rule",
+        "canonical": "rgba(242, 246, 245, 0.3)",
+        "tonalRamp": [
+          "oklch(15% 0.004 179.7 / .3)",
+          "oklch(27% 0.004 179.7 / .3)",
+          "oklch(39% 0.004 179.7 / .3)",
+          "oklch(51% 0.004 179.7 / .3)",
+          "oklch(63% 0.004 179.7 / .3)",
+          "oklch(75% 0.004 179.7 / .3)",
+          "oklch(87% 0.004 179.7 / .3)",
+          "oklch(95% 0.004 179.7 / .3)"
+        ]
+      },
+      "aubergine-field": {
+        "role": "secondary",
+        "displayName": "Aubergine Field",
+        "canonical": "#24181f",
+        "tonalRamp": [
+          "oklch(15% 0.023 343.2)",
+          "oklch(27% 0.023 343.2)",
+          "oklch(39% 0.023 343.2)",
+          "oklch(51% 0.023 343.2)",
+          "oklch(63% 0.023 343.2)",
+          "oklch(75% 0.023 343.2)",
+          "oklch(87% 0.023 343.2)",
+          "oklch(95% 0.023 343.2)"
+        ]
+      },
+      "aubergine-deep": {
+        "role": "secondary",
+        "displayName": "Deep Aubergine",
+        "canonical": "#1d1319",
+        "tonalRamp": [
+          "oklch(15% 0.020 342.3)",
+          "oklch(27% 0.020 342.3)",
+          "oklch(39% 0.020 342.3)",
+          "oklch(51% 0.020 342.3)",
+          "oklch(63% 0.020 342.3)",
+          "oklch(75% 0.020 342.3)",
+          "oklch(87% 0.020 342.3)",
+          "oklch(95% 0.020 342.3)"
+        ]
+      },
+      "music-pane": {
+        "role": "secondary",
+        "displayName": "Translucent Aubergine Pane",
+        "canonical": "rgba(25, 20, 29, 0.84)",
+        "tonalRamp": [
+          "oklch(15% 0.019 309.8 / .84)",
+          "oklch(27% 0.019 309.8 / .84)",
+          "oklch(39% 0.019 309.8 / .84)",
+          "oklch(51% 0.019 309.8 / .84)",
+          "oklch(63% 0.019 309.8 / .84)",
+          "oklch(75% 0.019 309.8 / .84)",
+          "oklch(87% 0.019 309.8 / .84)",
+          "oklch(95% 0.019 309.8 / .84)"
+        ]
+      },
+      "ivory": {
+        "role": "secondary",
+        "displayName": "Performance Ivory",
+        "canonical": "#f2e8df",
+        "tonalRamp": [
+          "oklch(15% 0.016 64.7)",
+          "oklch(27% 0.016 64.7)",
+          "oklch(39% 0.016 64.7)",
+          "oklch(51% 0.016 64.7)",
+          "oklch(63% 0.016 64.7)",
+          "oklch(75% 0.016 64.7)",
+          "oklch(87% 0.016 64.7)",
+          "oklch(95% 0.016 64.7)"
+        ]
+      },
+      "music-detail": {
+        "role": "secondary",
+        "displayName": "Warm Performance Detail",
+        "canonical": "#d7c6bc",
+        "tonalRamp": [
+          "oklch(15% 0.024 52.6)",
+          "oklch(27% 0.024 52.6)",
+          "oklch(39% 0.024 52.6)",
+          "oklch(51% 0.024 52.6)",
+          "oklch(63% 0.024 52.6)",
+          "oklch(75% 0.024 52.6)",
+          "oklch(87% 0.024 52.6)",
+          "oklch(95% 0.024 52.6)"
+        ]
+      },
+      "music-muted": {
+        "role": "secondary",
+        "displayName": "Muted Performance Clay",
+        "canonical": "#c8b7ad",
+        "tonalRamp": [
+          "oklch(15% 0.024 52.6)",
+          "oklch(27% 0.024 52.6)",
+          "oklch(39% 0.024 52.6)",
+          "oklch(51% 0.024 52.6)",
+          "oklch(63% 0.024 52.6)",
+          "oklch(75% 0.024 52.6)",
+          "oklch(87% 0.024 52.6)",
+          "oklch(95% 0.024 52.6)"
+        ]
+      },
+      "music-line": {
+        "role": "secondary",
+        "displayName": "Music Rule",
+        "canonical": "rgba(242, 232, 223, 0.25)",
+        "tonalRamp": [
+          "oklch(15% 0.016 64.7 / .25)",
+          "oklch(27% 0.016 64.7 / .25)",
+          "oklch(39% 0.016 64.7 / .25)",
+          "oklch(51% 0.016 64.7 / .25)",
+          "oklch(63% 0.016 64.7 / .25)",
+          "oklch(75% 0.016 64.7 / .25)",
+          "oklch(87% 0.016 64.7 / .25)",
+          "oklch(95% 0.016 64.7 / .25)"
+        ]
+      },
+      "music-pane-edge": {
+        "role": "secondary",
+        "displayName": "Music Pane Edge",
+        "canonical": "rgba(242, 232, 223, 0.42)",
+        "tonalRamp": [
+          "oklch(15% 0.016 64.7 / .42)",
+          "oklch(27% 0.016 64.7 / .42)",
+          "oklch(39% 0.016 64.7 / .42)",
+          "oklch(51% 0.016 64.7 / .42)",
+          "oklch(63% 0.016 64.7 / .42)",
+          "oklch(75% 0.016 64.7 / .42)",
+          "oklch(87% 0.016 64.7 / .42)",
+          "oklch(95% 0.016 64.7 / .42)"
+        ]
+      },
+      "video-black": {
+        "role": "neutral",
+        "displayName": "Video Black",
+        "canonical": "#0c0d0e",
+        "tonalRamp": [
+          "oklch(15% 0.003 248.0)",
+          "oklch(27% 0.003 248.0)",
+          "oklch(39% 0.003 248.0)",
+          "oklch(51% 0.003 248.0)",
+          "oklch(63% 0.003 248.0)",
+          "oklch(75% 0.003 248.0)",
+          "oklch(87% 0.003 248.0)",
+          "oklch(95% 0.003 248.0)"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Compressed Display",
+        "purpose": "Names and page titles across all three canvases."
+      },
+      "archive-heading": {
+        "displayName": "Archive Heading",
+        "purpose": "The active Research category heading above its strong rule."
+      },
+      "paper-title": {
+        "displayName": "Paper Title",
+        "purpose": "Compact research titles across long factual strings."
+      },
+      "body": {
+        "displayName": "Shared Body",
+        "purpose": "Biography, metadata, credits, controls, and supporting copy."
+      },
+      "nav-label": {
+        "displayName": "Navigation Label",
+        "purpose": "Persistent left-grouped horizontal navigation."
+      },
+      "music-lead": {
+        "displayName": "Music Lead",
+        "purpose": "The first-person musical introduction only."
+      },
+      "performance-title": {
+        "displayName": "Performance Title",
+        "purpose": "Repertoire titles within the active carousel slide."
+      }
+    },
+    "motion": [
+      {
+        "name": "page-leave",
+        "value": "180ms cubic-bezier(0.4, 0, 1, 1)",
+        "purpose": "Progressively fade and blur the old document during cross-document navigation."
+      },
+      {
+        "name": "page-arrival",
+        "value": "420ms cubic-bezier(0.16, 1, 0.3, 1)",
+        "purpose": "Progressively reveal the new document from lower opacity and stronger blur."
+      },
+      {
+        "name": "content-arrival",
+        "value": "360ms cubic-bezier(0.16, 1, 0.3, 1)",
+        "purpose": "Introduce an activated Research panel or performance slide."
+      },
+      {
+        "name": "line-arrival",
+        "value": "720ms cubic-bezier(0.16, 1, 0.3, 1)",
+        "purpose": "Draw the About canvas boundary once on arrival."
+      },
+      {
+        "name": "nav-underline",
+        "value": "220ms cubic-bezier(0.16, 1, 0.3, 1)",
+        "purpose": "Reveal the apricot navigation line on hover, focus, and the current route."
+      },
+      {
+        "name": "color-state",
+        "value": "180ms ease-out",
+        "purpose": "Resolve quiet color changes for navigation, tabs, titles, and carousel controls."
+      },
+      {
+        "name": "reduced-motion",
+        "value": "0.01ms",
+        "purpose": "Collapse route, content, line, and state motion when reduced motion is requested."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "working-canvas-tighten",
+        "value": "1040px"
+      },
+      {
+        "name": "document-scroll",
+        "value": "900px"
+      },
+      {
+        "name": "mobile-shell",
+        "value": "680px"
+      },
+      {
+        "name": "compact-navigation",
+        "value": "390px"
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Transparent Left-Grouped Navigation",
+      "kind": "nav",
+      "refersTo": "navigation",
+      "description": "The same transparent identity and route group sits at the left edge of every primary canvas.",
+      "html": "<header class=\"ds-nav\"><a class=\"ds-wordmark\" href=\"#\">Shuhuai Zhang</a><nav class=\"ds-nav-links\" aria-label=\"Primary navigation\"><a aria-current=\"page\" href=\"#\">About</a><a href=\"#\">Research</a><a href=\"#\">Another Me</a></nav></header>",
+      "css": ".ds-nav { min-height: 84px; display: flex; align-items: center; justify-content: flex-start; padding: 0 40px; background: transparent; color: #f5f7f6; font-family: \"Archivo\", \"Arial Narrow\", sans-serif; } .ds-wordmark { flex: 0 0 auto; color: inherit; text-decoration: none; font-size: .98rem; font-stretch: 92%; font-weight: 620; letter-spacing: -.018em; } .ds-nav-links { display: flex; align-items: center; margin-left: clamp(30px,4.4vw,58px); gap: clamp(20px,3vw,38px); font-size: .9rem; font-stretch: 96%; font-weight: 540; } .ds-nav-links a { position: relative; padding: 10px 0; color: rgba(245,247,246,.86); text-decoration: none; transition: color 180ms ease-out; } .ds-nav-links a::after { position: absolute; right: 0; bottom: 5px; left: 0; height: 1px; background: #d38a68; content: \"\"; transform: scaleX(0); transform-origin: right; transition: transform 220ms cubic-bezier(.16,1,.3,1); } .ds-nav-links a:hover, .ds-nav-links a:focus-visible, .ds-nav-links a[aria-current=\"page\"] { color: #f5f7f6; } .ds-nav-links a:hover::after, .ds-nav-links a:focus-visible::after, .ds-nav-links a[aria-current=\"page\"]::after { transform: scaleX(1); transform-origin: left; } .ds-nav-links a:focus-visible { outline: 2px solid #d38a68; outline-offset: 4px; }"
+    },
+    {
+      "name": "About Portrait Canvas",
+      "kind": "custom",
+      "refersTo": "home-canvas",
+      "description": "One full-height portrait field carries the name, biography, and email in a protected left reading column.",
+      "html": "<section class=\"ds-home\"><div class=\"ds-home-copy\"><h1><span>Shuhuai</span><span>Zhang</span></h1><div class=\"ds-home-profile\"><p>Assistant professor biography.</p><p>Education and research interests.</p><p class=\"ds-home-email\">shuhuai (at) cufe (dot) edu (dot) cn</p></div></div></section>",
+      "css": ".ds-home { position: relative; isolation: isolate; min-height: 100svh; display: grid; grid-template-columns: minmax(0,.9fr) minmax(360px,1.1fr); align-items: center; overflow: hidden; padding: 120px 8vw 72px; background: #5d7078; color: #f5f7f6; font-family: \"Archivo\", \"Arial Narrow\", sans-serif; } .ds-home::before { position: absolute; z-index: -1; inset: 0; background: linear-gradient(90deg,rgba(38,52,60,.97) 0%,rgba(45,61,69,.92) 31%,rgba(52,69,77,.74) 45%,rgba(57,74,82,.3) 61%,rgba(57,74,82,.06) 76%,transparent 100%),url(\"hero-portrait-wide.jpg\") center 40%/cover no-repeat; content: \"\"; opacity: .94; } .ds-home-copy { max-width: 560px; } .ds-home h1 { margin: 0; font-size: clamp(4.1rem,8.2vw,6rem); font-stretch: 78%; font-weight: 650; letter-spacing: -.038em; line-height: .84; } .ds-home h1 span { display: block; } .ds-home h1 span:last-child { margin-left: clamp(28px,8vw,112px); } .ds-home-profile { max-width: 50ch; margin-top: 48px; } .ds-home-profile p { margin: 0; color: rgba(245,247,246,.92); font-size: 1rem; line-height: 1.62; } .ds-home-profile p + p { margin-top: 16px; } .ds-home-email { width: max-content; margin-top: 26px !important; color: #f5f7f6 !important; font-size: .82rem !important; white-space: nowrap; }"
+    },
+    {
+      "name": "Research Two-Node Selector",
+      "kind": "button",
+      "refersTo": "research-selector",
+      "description": "Two square nodes and a fine line switch the active archive without becoming pills or a permanent rail.",
+      "html": "<div class=\"ds-research-tabs\" role=\"tablist\" aria-label=\"Research categories\"><button class=\"ds-research-tab ds-is-active\" type=\"button\" role=\"tab\" aria-selected=\"true\"><span class=\"ds-research-node\" aria-hidden=\"true\"></span><span>Publications</span></button><button class=\"ds-research-tab\" type=\"button\" role=\"tab\" aria-selected=\"false\"><span class=\"ds-research-node\" aria-hidden=\"true\"></span><span>Working Papers</span></button></div>",
+      "css": ".ds-research-tabs { position: relative; display: grid; max-width: 260px; background: linear-gradient(rgba(245,247,246,.38),rgba(245,247,246,.38)) 6px 24px/1px calc(100% - 48px) no-repeat; font-family: \"Archivo\", \"Arial Narrow\", sans-serif; } .ds-research-tab { position: relative; display: grid; min-height: 54px; grid-template-columns: 13px minmax(0,1fr); align-items: center; gap: 17px; padding: 13px 0; border: 0; background: transparent; color: rgba(245,247,246,.72); cursor: pointer; font: inherit; font-size: .98rem; font-stretch: 94%; font-weight: 520; text-align: left; transition: color 180ms ease-out; } .ds-research-node { width: 11px; height: 11px; border: 1px solid rgba(245,247,246,.76); background: rgba(48,64,72,.88); transition: border-color 180ms ease-out,background-color 180ms ease-out; } .ds-research-tab:hover, .ds-research-tab:focus-visible, .ds-research-tab.ds-is-active { color: #f5f7f6; } .ds-research-tab.ds-is-active .ds-research-node { border-color: #d38a68; background: #d38a68; } .ds-research-tab:focus-visible { outline: 2px solid #d38a68; outline-offset: 4px; }"
+    },
+    {
+      "name": "Research Reading Pane",
+      "kind": "custom",
+      "refersTo": "research-reading-pane",
+      "description": "A square translucent academic pane contains a ruled archive row and its compact evidence link.",
+      "html": "<section class=\"ds-research-pane\"><header class=\"ds-research-heading\"><h2>Publications</h2></header><article class=\"ds-paper\"><div><h3>Research title</h3><p>with collaborators</p><p class=\"ds-paper-venue\">Working paper</p></div><a href=\"#\">PDF <svg aria-hidden=\"true\" viewBox=\"0 0 12 12\"><path d=\"M3 9 9 3M4 3h5v5\"/></svg></a></article></section>",
+      "css": ".ds-research-pane { padding: clamp(34px,4.2vw,54px) clamp(34px,4.5vw,58px); border-block: 1px solid rgba(245,247,246,.68); background: rgba(237,242,242,.91); color: #18242b; font-family: \"Archivo\", \"Arial Narrow\", sans-serif; } .ds-research-heading { padding-bottom: 24px; border-bottom: 1px solid #18242b; } .ds-research-heading h2 { margin: 0; font-size: clamp(2rem,3.2vw,3rem); font-stretch: 84%; font-weight: 570; letter-spacing: -.032em; line-height: 1; } .ds-paper { display: grid; grid-template-columns: minmax(0,1fr) 104px; gap: clamp(28px,4vw,58px); padding: 28px 0 32px; border-bottom: 1px solid rgba(24,36,43,.24); } .ds-paper h3 { margin: 0; font-size: clamp(1.08rem,1.42vw,1.3rem); font-stretch: 94%; font-weight: 600; letter-spacing: -.022em; line-height: 1.34; transition: color 180ms ease-out; } .ds-paper:hover h3 { color: #8f4f3a; } .ds-paper p { margin: 11px 0 0; color: #506168; font-size: .88rem; line-height: 1.55; } .ds-paper .ds-paper-venue { color: #18242b; } .ds-paper > a { justify-self: end; align-self: start; display: inline-flex; align-items: center; gap: 6px; border-bottom: 1px solid currentColor; color: inherit; text-decoration: none; font-size: .76rem; font-weight: 630; line-height: 1.7; } .ds-paper svg { width: 11px; height: 11px; fill: none; stroke: currentColor; stroke-linecap: square; stroke-width: 1.4; } .ds-paper > a:focus-visible { outline: 2px solid #8f4f3a; outline-offset: 4px; }"
+    },
+    {
+      "name": "Performance Carousel Slide",
+      "kind": "custom",
+      "refersTo": "performance-carousel",
+      "description": "One active performance pairs apricot-framed 16:9 media with warm repertoire copy inside a translucent aubergine pane.",
+      "html": "<section class=\"ds-carousel\" aria-label=\"Performance recordings\"><div class=\"ds-carousel-viewport\"><article class=\"ds-performance\"><div class=\"ds-performance-media\"><div class=\"ds-video\" role=\"img\" aria-label=\"16 by 9 performance video\">16:9 PERFORMANCE</div></div><div class=\"ds-performance-copy\"><p class=\"ds-performance-year\">2017</p><h3>Jean Sibelius: Symphony No. 1 in E minor, Op. 39 — IV. Finale</h3><p class=\"ds-performance-credit\">Chair Violin, 5th National University Student Art Show (Gold Medal)</p></div></article></div><div class=\"ds-carousel-strip\"><span>‹</span><p><strong>01</strong> / 08</p><span>›</span></div></section>",
+      "css": ".ds-carousel { display: grid; grid-template-rows: minmax(0,1fr) 64px; border-block: 1px solid rgba(242,232,223,.42); background: rgba(25,20,29,.84); color: #f2e8df; font-family: \"Archivo\", \"Arial Narrow\", sans-serif; } .ds-carousel-viewport { padding: clamp(24px,3.1vw,40px); } .ds-performance-media { padding: clamp(6px,.65vw,9px); background: #d38a68; } .ds-video { aspect-ratio: 16/9; display: grid; place-items: center; overflow: hidden; background: #0c0d0e; color: rgba(242,232,223,.62); font-size: .72rem; letter-spacing: .02em; } .ds-performance-copy { max-width: 66ch; margin-top: clamp(22px,3vh,30px); } .ds-performance-copy p, .ds-performance-copy h3 { margin: 0; } .ds-performance-year { color: #d38a68; font-size: .77rem; font-weight: 640; font-variant-numeric: tabular-nums; } .ds-performance-copy h3 { margin-top: 13px; font-family: \"Alegreya\", Georgia, serif; font-size: clamp(1.5rem,2.25vw,2.15rem); font-weight: 530; letter-spacing: -.025em; line-height: 1.08; } .ds-performance-detail { margin-top: 16px !important; color: #d7c6bc; font-family: \"Alegreya\", Georgia, serif; font-size: .95rem; line-height: 1.5; } .ds-performance-credit { margin-top: 20px !important; padding-top: 14px; border-top: 1px solid rgba(242,232,223,.25); color: #c8b7ad; font-size: .82rem; line-height: 1.52; } .ds-carousel-strip { display: grid; grid-template-columns: 64px 1fr 64px; align-items: center; border-top: 1px solid rgba(242,232,223,.25); color: #c8b7ad; text-align: center; } .ds-carousel-strip > span { display: grid; height: 64px; place-items: center; border-inline: 1px solid rgba(242,232,223,.25); color: #f2e8df; font-size: 1.5rem; } .ds-carousel-strip p { margin: 0; font-size: .78rem; font-variant-numeric: tabular-nums; letter-spacing: .04em; } .ds-carousel-strip strong { color: #f2e8df; font-weight: 570; }"
+    },
+    {
+      "name": "Carousel Arrow Control",
+      "kind": "button",
+      "refersTo": "carousel-control",
+      "description": "A square previous-or-next control inverts from ivory on aubergine to deep aubergine on apricot.",
+      "html": "<button class=\"ds-carousel-button\" type=\"button\" aria-label=\"Next performance\"><svg aria-hidden=\"true\" viewBox=\"0 0 24 24\"><path d=\"m9.5 5 7 7-7 7\"/></svg></button>",
+      "css": ".ds-carousel-button { display: grid; width: 64px; height: 64px; padding: 0; border: 0; background: transparent; color: #f2e8df; cursor: pointer; place-items: center; transition: background-color 180ms ease-out,color 180ms ease-out; } .ds-carousel-button:hover, .ds-carousel-button:focus-visible { background: #d38a68; color: #1d1319; } .ds-carousel-button:focus-visible { outline: 2px solid #d38a68; outline-offset: 4px; } .ds-carousel-button svg { width: 22px; height: 22px; fill: none; stroke: currentColor; stroke-linecap: square; stroke-linejoin: miter; stroke-width: 1.5; }"
+    },
+    {
+      "name": "Skip Link",
+      "kind": "custom",
+      "refersTo": "skip-link",
+      "description": "A square apricot accessibility control appears only when keyboard focus reaches it.",
+      "html": "<a class=\"ds-skip-link\" href=\"#main\">Skip to content</a>",
+      "css": ".ds-skip-link { display: inline-block; padding: 10px 14px; background: #d38a68; color: #1d1319; font-family: \"Archivo\", \"Arial Narrow\", sans-serif; font-weight: 650; text-decoration: none; transform: translateY(-160%); } .ds-skip-link:focus { transform: translateY(0); } .ds-skip-link:focus-visible { outline: 2px solid #d38a68; outline-offset: 4px; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "Two Registers, One Line",
+    "overview": "One identity is expressed through two genuine registers. About and Research occupy a cool mineral-and-slate painterly world; Another Me shifts into aubergine, ivory, and apricot. Transparent left-grouped navigation, compressed Archivo display type, full-viewport fields, square geometry, and fine rules keep the three independent routes on one structural line.\n\nThe system is experiential but exact. About lets a full portrait field carry biography and contact information; Research makes a generated mineral field the atmosphere behind a functional two-node archive; Another Me sets one performance at a time against a warmer abstract field. The interface refuses boxed portfolio heroes, a permanent side rail, floating cards, ornamental chrome, and invented proof.",
+    "keyCharacteristics": [
+      "Two coordinated painterly registers within one identity.",
+      "Transparent, horizontal, left-grouped navigation on every primary route.",
+      "Full-viewport fields with square, translucent reading surfaces rather than cards.",
+      "Compressed sans type shared across the identity; measured serif type reserved for music.",
+      "Ruled research records and 16:9 performance media with restrained, progressive motion."
+    ],
+    "rules": [
+      {
+        "name": "The Two Registers Rule",
+        "body": "Cool painterly slate and mineral belong to academic reading; aubergine and ivory belong to performance; apricot and the one-pixel line make them siblings.",
+        "section": "colors"
+      },
+      {
+        "name": "The Contrast-Specific Focus Rule",
+        "body": "Use Academic Focus Clay on the pale Research pane, apricot on dark interactive surfaces, and ivory around focused performance media.",
+        "section": "colors"
+      },
+      {
+        "name": "The Rare Accent Rule",
+        "body": "Apricot marks identity, selection, action, focus, or real media; it never becomes a general-purpose page surface.",
+        "section": "colors"
+      },
+      {
+        "name": "The Shared Display Rule",
+        "body": "Archivo owns the name, page titles, navigation, selector labels, and academic record on every route.",
+        "section": "typography"
+      },
+      {
+        "name": "The Serif Reserve Rule",
+        "body": "Alegreya is limited to the music introduction, performance titles, and repertoire detail; it does not replace the shared identity layer.",
+        "section": "typography"
+      },
+      {
+        "name": "The Full-Viewport Field Rule",
+        "body": "Generated imagery and tonal overlays span the canvas; the centered shell aligns content but never turns the route into a boxed portfolio hero.",
+        "section": "layout"
+      },
+      {
+        "name": "The One-Scroller Rule",
+        "body": "Research and Another Me use contained pane scrolling only above 900px; below that breakpoint, the document owns the scroll.",
+        "section": "layout"
+      },
+      {
+        "name": "The Horizontal Navigation Rule",
+        "body": "About, Research, and Another Me remain visible in one left-grouped row on desktop and mobile.",
+        "section": "layout"
+      },
+      {
+        "name": "The Flat-by-Construction Rule",
+        "body": "Use imagery, tonal overlays, rules, and controlled translucency to establish depth; do not introduce shadows, rounded glass, or floating layers.",
+        "section": "elevation"
+      },
+      {
+        "name": "The Progressive Motion Rule",
+        "body": "Route transitions enhance navigation when the browser supports them and disappear cleanly under reduced motion; content remains complete without animation.",
+        "section": "elevation"
+      },
+      {
+        "name": "The Square Media Rule",
+        "body": "Performance media remains 16:9, square-cornered, and attached to its active descriptive record.",
+        "section": "shapes"
+      },
+      {
+        "name": "The Line-and-Node Rule",
+        "body": "Use one-pixel rules and small square nodes to express sequence and selection; do not substitute pills, chips, or badges.",
+        "section": "shapes"
+      }
+    ],
+    "dos": [
+      "Do preserve the full generated portrait on About and the fixed generated painterly canvases on Research and Another Me.",
+      "Do keep the transparent navigation horizontal, visible, and grouped at the left on every viewport.",
+      "Do preserve Research as a two-node selector plus translucent scrolling archive, with Publications active by default.",
+      "Do preserve the one-at-a-time performance carousel, active-only iframe loading, and real 16:9 media.",
+      "Do use contained pane scrolling only above 900px and whole-page scrolling below it.",
+      "Do preserve self-hosted Archivo across the identity and reserve self-hosted Alegreya for musical narrative.",
+      "Do keep Academic Focus Clay on pale academic surfaces and apricot or ivory focus treatment on dark surfaces.",
+      "Do keep View Transitions progressive and collapse motion under `prefers-reduced-motion`."
+    ],
+    "donts": [
+      "Don't replace the Research painterly canvas with the former solid slate field or separate header band.",
+      "Don't turn the performance archive back into eight stacked rows; keep one active record in the carousel.",
+      "Don't introduce a permanent side rail, far-separated navigation, mobile drawer, decorative numbering, badges, or invented metadata.",
+      "Don't place the biography in a detached card or pale band, or obscure the portrait with interface chrome.",
+      "Don't round the reading panes or media, add shadows, backdrop blur, or floating glass cards.",
+      "Don't spread apricot across general-purpose surfaces; its rarity carries identity and state.",
+      "Don't use Alegreya for academic headings, navigation, years, controls, or credits.",
+      "Don't fabricate portraits, logos, testimonials, research claims, performance records, or other visual proof."
+    ]
+  }
+}
