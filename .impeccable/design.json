@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "generatedAt": "2026-08-09T16:26:27Z",
+  "generatedAt": "2026-08-12T19:08:54Z",
   "title": "Design System: Shuhuai Zhang Personal Website",
   "extensions": {
     "colorMeta": {
@@ -139,19 +139,19 @@
           "oklch(95% 0.024 224.7)"
         ]
       },
-      "research-pane": {
+      "research-mist-core": {
         "role": "primary",
-        "displayName": "Translucent Research Paper",
-        "canonical": "rgba(237, 242, 242, 0.91)",
+        "displayName": "Mineral Mist Core",
+        "canonical": "rgba(211, 222, 223, 0.76)",
         "tonalRamp": [
-          "oklch(15% 0.005 197.1 / .91)",
-          "oklch(27% 0.005 197.1 / .91)",
-          "oklch(39% 0.005 197.1 / .91)",
-          "oklch(51% 0.005 197.1 / .91)",
-          "oklch(63% 0.005 197.1 / .91)",
-          "oklch(75% 0.005 197.1 / .91)",
-          "oklch(87% 0.005 197.1 / .91)",
-          "oklch(95% 0.005 197.1 / .91)"
+          "oklch(15% 0.012 198 / .76)",
+          "oklch(27% 0.012 198 / .76)",
+          "oklch(39% 0.012 198 / .76)",
+          "oklch(51% 0.012 198 / .76)",
+          "oklch(63% 0.012 198 / .76)",
+          "oklch(75% 0.012 198 / .76)",
+          "oklch(87% 0.012 198 / .76)",
+          "oklch(95% 0.012 198 / .76)"
         ]
       },
       "nav-light-muted": {
@@ -412,19 +412,29 @@
     },
     "motion": [
       {
-        "name": "page-leave",
-        "value": "180ms cubic-bezier(0.4, 0, 1, 1)",
-        "purpose": "Progressively fade and blur the old document during cross-document navigation."
+        "name": "page-canvas-leave",
+        "value": "300ms cubic-bezier(0.4, 0, 1, 1)",
+        "purpose": "Send the old named page canvas left when moving forward through About, Research, and Another Me; reverse the direction when moving backward."
       },
       {
-        "name": "page-arrival",
-        "value": "420ms cubic-bezier(0.16, 1, 0.3, 1)",
-        "purpose": "Progressively reveal the new document from lower opacity and stronger blur."
+        "name": "page-canvas-arrival",
+        "value": "440ms cubic-bezier(0.16, 1, 0.3, 1)",
+        "purpose": "Bring the new named page canvas from the right on forward navigation or from the left on backward navigation; reload does not slide."
       },
       {
-        "name": "content-arrival",
-        "value": "360ms cubic-bezier(0.16, 1, 0.3, 1)",
-        "purpose": "Introduce an activated Research panel or performance slide."
+        "name": "research-category-exchange",
+        "value": "280ms outgoing / 300ms incoming",
+        "purpose": "Move Publications to Working Papers upward and return downward."
+      },
+      {
+        "name": "carousel-film-strip",
+        "value": "360ms outgoing / 380ms incoming",
+        "purpose": "Slide the complete performance record left for next and right for previous, unloading the old iframe after exit."
+      },
+      {
+        "name": "stable-navigation",
+        "value": "220ms named transition group",
+        "purpose": "Keep the transparent navigation above and spatially separate from the sliding page canvas."
       },
       {
         "name": "line-arrival",
@@ -444,7 +454,7 @@
       {
         "name": "reduced-motion",
         "value": "0.01ms",
-        "purpose": "Collapse route, content, line, and state motion when reduced motion is requested."
+        "purpose": "Collapse route, category, carousel, line, and state motion when reduced motion is requested."
       }
     ],
     "breakpoints": [
@@ -492,18 +502,18 @@
       "css": ".ds-research-tabs { position: relative; display: grid; max-width: 260px; background: linear-gradient(rgba(245,247,246,.38),rgba(245,247,246,.38)) 6px 24px/1px calc(100% - 48px) no-repeat; font-family: \"Archivo\", \"Arial Narrow\", sans-serif; } .ds-research-tab { position: relative; display: grid; min-height: 54px; grid-template-columns: 13px minmax(0,1fr); align-items: center; gap: 17px; padding: 13px 0; border: 0; background: transparent; color: rgba(245,247,246,.72); cursor: pointer; font: inherit; font-size: .98rem; font-stretch: 94%; font-weight: 520; text-align: left; transition: color 180ms ease-out; } .ds-research-node { width: 11px; height: 11px; border: 1px solid rgba(245,247,246,.76); background: rgba(48,64,72,.88); transition: border-color 180ms ease-out,background-color 180ms ease-out; } .ds-research-tab:hover, .ds-research-tab:focus-visible, .ds-research-tab.ds-is-active { color: #f5f7f6; } .ds-research-tab.ds-is-active .ds-research-node { border-color: #d38a68; background: #d38a68; } .ds-research-tab:focus-visible { outline: 2px solid #d38a68; outline-offset: 4px; }"
     },
     {
-      "name": "Research Reading Pane",
+      "name": "Research Reading Field",
       "kind": "custom",
-      "refersTo": "research-reading-pane",
-      "description": "A square translucent academic pane contains a ruled archive row and its compact evidence link.",
-      "html": "<section class=\"ds-research-pane\"><header class=\"ds-research-heading\"><h2>Publications</h2></header><article class=\"ds-paper\"><div><h3>Research title</h3><p>with collaborators</p><p class=\"ds-paper-venue\">Working paper</p></div><a href=\"#\">PDF <svg aria-hidden=\"true\" viewBox=\"0 0 12 12\"><path d=\"M3 9 9 3M4 3h5v5\"/></svg></a></article></section>",
-      "css": ".ds-research-pane { padding: clamp(34px,4.2vw,54px) clamp(34px,4.5vw,58px); border-block: 1px solid rgba(245,247,246,.68); background: rgba(237,242,242,.91); color: #18242b; font-family: \"Archivo\", \"Arial Narrow\", sans-serif; } .ds-research-heading { padding-bottom: 24px; border-bottom: 1px solid #18242b; } .ds-research-heading h2 { margin: 0; font-size: clamp(2rem,3.2vw,3rem); font-stretch: 84%; font-weight: 570; letter-spacing: -.032em; line-height: 1; } .ds-paper { display: grid; grid-template-columns: minmax(0,1fr) 104px; gap: clamp(28px,4vw,58px); padding: 28px 0 32px; border-bottom: 1px solid rgba(24,36,43,.24); } .ds-paper h3 { margin: 0; font-size: clamp(1.08rem,1.42vw,1.3rem); font-stretch: 94%; font-weight: 600; letter-spacing: -.022em; line-height: 1.34; transition: color 180ms ease-out; } .ds-paper:hover h3 { color: #8f4f3a; } .ds-paper p { margin: 11px 0 0; color: #506168; font-size: .88rem; line-height: 1.55; } .ds-paper .ds-paper-venue { color: #18242b; } .ds-paper > a { justify-self: end; align-self: start; display: inline-flex; align-items: center; gap: 6px; border-bottom: 1px solid currentColor; color: inherit; text-decoration: none; font-size: .76rem; font-weight: 630; line-height: 1.7; } .ds-paper svg { width: 11px; height: 11px; fill: none; stroke: currentColor; stroke-linecap: square; stroke-width: 1.4; } .ds-paper > a:focus-visible { outline: 2px solid #8f4f3a; outline-offset: 4px; }"
+      "refersTo": "research-reading-field",
+      "description": "A soft-edged mineral mist keeps the painterly canvas perceptible behind a ruled archive and subtle overflow indicator.",
+      "html": "<div class=\"ds-research-field\"><section class=\"ds-research-reading\"><header class=\"ds-research-heading\"><h2>Publications</h2></header><article class=\"ds-paper\"><div><h3>Research title</h3><p>with collaborators</p><p class=\"ds-paper-venue\">Working paper</p></div><a href=\"#\">PDF <svg aria-hidden=\"true\" viewBox=\"0 0 12 12\"><path d=\"M3 9 9 3M4 3h5v5\"/></svg></a></article></section><span class=\"ds-scroll-track\" aria-hidden=\"true\"><span></span></span></div>",
+      "css": ".ds-research-field { position: relative; overflow: hidden; border-block: 1px solid rgba(245,247,246,.3); background: #687b83; } .ds-research-reading { padding: clamp(34px,4.2vw,54px) clamp(34px,4.5vw,58px); background: linear-gradient(90deg,rgba(195,209,212,.03) 0%,rgba(202,215,217,.65) 11%,rgba(211,222,223,.76) 76%,rgba(195,209,212,.05) 100%); color: #18242b; font-family: \"Archivo\", \"Arial Narrow\", sans-serif; -webkit-mask-image: linear-gradient(180deg,transparent 0,#000 28px,#000 calc(100% - 28px),transparent 100%); mask-image: linear-gradient(180deg,transparent 0,#000 28px,#000 calc(100% - 28px),transparent 100%); } .ds-research-field::before, .ds-research-field::after { position: absolute; z-index: 2; top: 0; bottom: 0; width: clamp(24px,3.8vw,52px); content: \"\"; pointer-events: none; } .ds-research-field::before { left: 0; background: linear-gradient(90deg,rgba(77,94,101,.18),transparent); } .ds-research-field::after { right: 0; background: linear-gradient(270deg,rgba(86,101,108,.2),transparent); } .ds-scroll-track { position: absolute; z-index: 4; top: 34px; right: 8px; bottom: 34px; width: 1px; background: rgba(24,36,43,.13); } .ds-scroll-track > span { position: absolute; top: 0; left: -1px; width: 3px; height: 38%; background: rgba(66,84,92,.68); } .ds-research-heading { padding-bottom: 24px; border-bottom: 1px solid #18242b; } .ds-research-heading h2 { margin: 0; font-size: clamp(2rem,3.2vw,3rem); font-stretch: 84%; font-weight: 570; letter-spacing: -.032em; line-height: 1; } .ds-paper { display: grid; grid-template-columns: minmax(0,1fr) 104px; gap: clamp(28px,4vw,58px); padding: 28px 0 32px; border-bottom: 1px solid rgba(24,36,43,.24); } .ds-paper h3 { margin: 0; font-size: clamp(1.08rem,1.42vw,1.3rem); font-stretch: 94%; font-weight: 600; letter-spacing: -.022em; line-height: 1.34; transition: color 180ms ease-out; } .ds-paper:hover h3 { color: #8f4f3a; } .ds-paper p { margin: 11px 0 0; color: #506168; font-size: .88rem; line-height: 1.55; } .ds-paper .ds-paper-venue { color: #18242b; } .ds-paper > a { justify-self: end; align-self: start; display: inline-flex; align-items: center; gap: 6px; border-bottom: 1px solid currentColor; color: inherit; text-decoration: none; font-size: .76rem; font-weight: 630; line-height: 1.7; } .ds-paper svg { width: 11px; height: 11px; fill: none; stroke: currentColor; stroke-linecap: square; stroke-width: 1.4; } .ds-paper > a:focus-visible { outline: 2px solid #8f4f3a; outline-offset: 4px; }"
     },
     {
       "name": "Performance Carousel Slide",
       "kind": "custom",
       "refersTo": "performance-carousel",
-      "description": "One active performance pairs apricot-framed 16:9 media with warm repertoire copy inside a translucent aubergine pane.",
+      "description": "One complete media-and-copy performance record moves as a horizontal film strip inside a translucent aubergine pane.",
       "html": "<section class=\"ds-carousel\" aria-label=\"Performance recordings\"><div class=\"ds-carousel-viewport\"><article class=\"ds-performance\"><div class=\"ds-performance-media\"><div class=\"ds-video\" role=\"img\" aria-label=\"16 by 9 performance video\">16:9 PERFORMANCE</div></div><div class=\"ds-performance-copy\"><p class=\"ds-performance-year\">2017</p><h3>Jean Sibelius: Symphony No. 1 in E minor, Op. 39 — IV. Finale</h3><p class=\"ds-performance-credit\">Chair Violin, 5th National University Student Art Show (Gold Medal)</p></div></article></div><div class=\"ds-carousel-strip\"><span>‹</span><p><strong>01</strong> / 08</p><span>›</span></div></section>",
       "css": ".ds-carousel { display: grid; grid-template-rows: minmax(0,1fr) 64px; border-block: 1px solid rgba(242,232,223,.42); background: rgba(25,20,29,.84); color: #f2e8df; font-family: \"Archivo\", \"Arial Narrow\", sans-serif; } .ds-carousel-viewport { padding: clamp(24px,3.1vw,40px); } .ds-performance-media { padding: clamp(6px,.65vw,9px); background: #d38a68; } .ds-video { aspect-ratio: 16/9; display: grid; place-items: center; overflow: hidden; background: #0c0d0e; color: rgba(242,232,223,.62); font-size: .72rem; letter-spacing: .02em; } .ds-performance-copy { max-width: 66ch; margin-top: clamp(22px,3vh,30px); } .ds-performance-copy p, .ds-performance-copy h3 { margin: 0; } .ds-performance-year { color: #d38a68; font-size: .77rem; font-weight: 640; font-variant-numeric: tabular-nums; } .ds-performance-copy h3 { margin-top: 13px; font-family: \"Alegreya\", Georgia, serif; font-size: clamp(1.5rem,2.25vw,2.15rem); font-weight: 530; letter-spacing: -.025em; line-height: 1.08; } .ds-performance-detail { margin-top: 16px !important; color: #d7c6bc; font-family: \"Alegreya\", Georgia, serif; font-size: .95rem; line-height: 1.5; } .ds-performance-credit { margin-top: 20px !important; padding-top: 14px; border-top: 1px solid rgba(242,232,223,.25); color: #c8b7ad; font-size: .82rem; line-height: 1.52; } .ds-carousel-strip { display: grid; grid-template-columns: 64px 1fr 64px; align-items: center; border-top: 1px solid rgba(242,232,223,.25); color: #c8b7ad; text-align: center; } .ds-carousel-strip > span { display: grid; height: 64px; place-items: center; border-inline: 1px solid rgba(242,232,223,.25); color: #f2e8df; font-size: 1.5rem; } .ds-carousel-strip p { margin: 0; font-size: .78rem; font-variant-numeric: tabular-nums; letter-spacing: .04em; } .ds-carousel-strip strong { color: #f2e8df; font-weight: 570; }"
     },
@@ -530,7 +540,7 @@
     "keyCharacteristics": [
       "Two coordinated painterly registers within one identity.",
       "Transparent, horizontal, left-grouped navigation on every primary route.",
-      "Full-viewport fields with square, translucent reading surfaces rather than cards.",
+      "Full-viewport fields with an edge-dissolving mineral reading mist rather than a white card.",
       "Compressed sans type shared across the identity; measured serif type reserved for music.",
       "Ruled research records and 16:9 performance media with restrained, progressive motion."
     ],
@@ -542,7 +552,7 @@
       },
       {
         "name": "The Contrast-Specific Focus Rule",
-        "body": "Use Academic Focus Clay on the pale Research pane, apricot on dark interactive surfaces, and ivory around focused performance media.",
+        "body": "Use Academic Focus Clay on the pale Research field, apricot on dark interactive surfaces, and ivory around focused performance media.",
         "section": "colors"
       },
       {
@@ -582,7 +592,7 @@
       },
       {
         "name": "The Progressive Motion Rule",
-        "body": "Route transitions enhance navigation when the browser supports them and disappear cleanly under reduced motion; content remains complete without animation.",
+        "body": "Direction communicates sequence at the route, Research-category, and performance levels; enhancement disappears cleanly when unsupported or reduced, while content remains complete without JavaScript.",
         "section": "elevation"
       },
       {
@@ -599,19 +609,21 @@
     "dos": [
       "Do preserve the full generated portrait on About and the fixed generated painterly canvases on Research and Another Me.",
       "Do keep the transparent navigation horizontal, visible, and grouped at the left on every viewport.",
-      "Do preserve Research as a two-node selector plus translucent scrolling archive, with Publications active by default.",
-      "Do preserve the one-at-a-time performance carousel, active-only iframe loading, and real 16:9 media.",
+      "Do preserve Research as a two-node selector plus edge-dissolving mineral reading mist, with Publications active by default and a subtle overflow-only scroll indicator.",
+      "Do preserve the one-at-a-time horizontal performance carousel, post-exit iframe unloading, and real 16:9 media.",
       "Do use contained pane scrolling only above 900px and whole-page scrolling below it.",
       "Do preserve self-hosted Archivo across the identity and reserve self-hosted Alegreya for musical narrative.",
       "Do keep Academic Focus Clay on pale academic surfaces and apricot or ivory focus treatment on dark surfaces.",
-      "Do keep View Transitions progressive and collapse motion under `prefers-reduced-motion`."
+      "Do preserve the About → Research → Another Me spatial order, keep navigation stable while canvases slide, make reload motionless, and collapse motion under `prefers-reduced-motion`.",
+      "Do keep every panel and performance record sequentially readable when JavaScript is unavailable."
     ],
     "donts": [
       "Don't replace the Research painterly canvas with the former solid slate field or separate header band.",
       "Don't turn the performance archive back into eight stacked rows; keep one active record in the carousel.",
       "Don't introduce a permanent side rail, far-separated navigation, mobile drawer, decorative numbering, badges, or invented metadata.",
       "Don't place the biography in a detached card or pale band, or obscure the portrait with interface chrome.",
-      "Don't round the reading panes or media, add shadows, backdrop blur, or floating glass cards.",
+      "Don't harden the Research mist into an opaque white page or floating card; do not round the reading surfaces or media, add shadows, or introduce backdrop blur.",
+      "Don't replace directional exchanges with a uniform site-wide fade.",
       "Don't spread apricot across general-purpose surfaces; its rarity carries identity and state.",
       "Don't use Alegreya for academic headings, navigation, years, controls, or credits.",
       "Don't fabricate portraits, logos, testimonials, research claims, performance records, or other visual proof."

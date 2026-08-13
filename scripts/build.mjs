@@ -112,6 +112,7 @@ function layout({ title, description, body, base = "./", active, variant = "acad
     ${variant === "music" ? `<link rel="preload" href="${base}assets/fonts/alegreya-latin.woff2" as="font" type="font/woff2" crossorigin>` : ""}
     ${heroImage ? `<link rel="preload" href="${base}${heroImage}" as="image" fetchpriority="high">` : ""}
     <script>document.documentElement.classList.add("js")</script>
+    <script src="${base}assets/page-transitions.js"></script>
     <link rel="stylesheet" href="${base}assets/styles.css">
     <script src="${base}assets/site.js" defer></script>
   </head>
@@ -119,7 +120,7 @@ function layout({ title, description, body, base = "./", active, variant = "acad
     THESIS: Two genuine registers share one precise line; this refuses the boxed portfolio hero and permanent side rail.
     OWN-WORLD: Low-saturation slate blue and mineral blue structure academic pages; a painterly portrait enters only on About; aubergine, ivory, and apricot carry music. Full-width fields, square media, and ruled rows form the language.
     STORY: Visitors identify Shuhuai Zhang, read his biography and research, then may enter a warmer musical register without leaving the same identity.
-    FIRST VIEWPORT: Transparent horizontal navigation stays inside the quiet left extension of each full-height canvas. About pairs biography with portrait; Research pairs a two-node selector with a scrolling archive; Another Me pairs its introduction with one performance at a time.
+    FIRST VIEWPORT: Transparent horizontal navigation stays inside the quiet left extension of each full-height canvas. About, Research, and Another Me form a left-to-right sequence; Research pairs its two-node selector with a mineral reading mist, while Another Me pairs its introduction with one horizontally sliding performance at a time.
     FORM: User-pinned Two Registers, One Line; grounded direction; seed c3c10a7f.
     FINISH: unreviewed and undocumented is unfinished; this build ends with the finish review, the verdict, and DESIGN.md
   -->
@@ -147,7 +148,7 @@ function homePage(profile) {
 
   const body = `
     <main id="main">
-      <section class="home-hero" aria-labelledby="home-title">
+      <section class="home-hero page-canvas" aria-labelledby="home-title">
         <div class="home-hero-inner shell">
           <div class="home-copy">
             <h1 id="home-title"><span>Shuhuai</span><span>Zhang</span></h1>
@@ -175,7 +176,7 @@ function homePage(profile) {
 function researchPage(profile, groups) {
   const groupId = (title) => title.toLowerCase().replaceAll(/[^a-z0-9]+/g, "-").replaceAll(/^-|-$/g, "");
   const body = `
-    <main id="main" class="research-canvas" data-research-page>
+    <main id="main" class="research-canvas page-canvas" data-research-page>
       <div class="research-canvas-inner shell">
         <section class="research-rail" aria-labelledby="research-title">
           <h1 id="research-title">Research</h1>
@@ -190,29 +191,34 @@ function researchPage(profile, groups) {
           </div>
         </section>
 
-        <div class="research-reading" data-research-reading>
-          ${groups.map((group, index) => {
-            const id = groupId(group.title);
-            return `<section class="research-panel${index === 0 ? " is-active" : ""}" id="research-panel-${id}" role="tabpanel" aria-labelledby="research-tab-${id}" data-research-panel="${id}">
-              <header class="research-panel-heading">
-                <h2>${escapeHtml(group.title)}</h2>
-              </header>
-              <ol class="paper-list">
-                ${group.entries.map((paper) => `
-                  <li class="paper-item">
-                    <div class="paper-main">
-                      <h3>${escapeHtml(paper.title)}</h3>
-                      <p>${escapeHtml(paper.authors)}</p>
-                      ${paper.venue ? `<p class="paper-venue"><em>${escapeHtml(paper.venue)}</em>${paper.year ? `, ${escapeHtml(paper.year)}` : ""}${paper.citation ? `, ${escapeHtml(paper.citation)}` : ""}</p>` : ""}
-                      ${paper.status ? `<p class="paper-venue"><em>${escapeHtml(paper.status)}</em></p>` : ""}
-                    </div>
-                    <div class="paper-side">
-                      ${researchLinks(paper.links)}
-                    </div>
-                  </li>`).join("")}
-              </ol>
-            </section>`;
-          }).join("")}
+        <div class="research-reading-frame">
+          <div class="research-reading" data-research-reading>
+            ${groups.map((group, index) => {
+              const id = groupId(group.title);
+              return `<section class="research-panel${index === 0 ? " is-active" : ""}" id="research-panel-${id}" role="tabpanel" aria-labelledby="research-tab-${id}" data-research-panel="${id}">
+                <header class="research-panel-heading">
+                  <h2>${escapeHtml(group.title)}</h2>
+                </header>
+                <ol class="paper-list">
+                  ${group.entries.map((paper) => `
+                    <li class="paper-item">
+                      <div class="paper-main">
+                        <h3>${escapeHtml(paper.title)}</h3>
+                        <p>${escapeHtml(paper.authors)}</p>
+                        ${paper.venue ? `<p class="paper-venue"><em>${escapeHtml(paper.venue)}</em>${paper.year ? `, ${escapeHtml(paper.year)}` : ""}${paper.citation ? `, ${escapeHtml(paper.citation)}` : ""}</p>` : ""}
+                        ${paper.status ? `<p class="paper-venue"><em>${escapeHtml(paper.status)}</em></p>` : ""}
+                      </div>
+                      <div class="paper-side">
+                        ${researchLinks(paper.links)}
+                      </div>
+                    </li>`).join("")}
+                </ol>
+              </section>`;
+            }).join("")}
+          </div>
+          <span class="research-scroll-track" data-research-scroll-track aria-hidden="true">
+            <span data-research-scroll-indicator></span>
+          </span>
         </div>
       </div>
     </main>`;
@@ -246,7 +252,7 @@ function musicPage(profile, performances) {
   const entries = performances[0]?.entries || [];
   const meta = profile.meta;
   const body = `
-    <main id="main" class="music-canvas">
+    <main id="main" class="music-canvas page-canvas">
       <div class="music-canvas-inner shell">
         <section class="music-rail" aria-labelledby="music-title">
           <h1 id="music-title"><span>Another</span><span>Me</span></h1>

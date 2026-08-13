@@ -6,11 +6,41 @@ function setupResearchTabs() {
   const tabs = [...page.querySelectorAll("[data-research-tab]")];
   const panels = [...page.querySelectorAll("[data-research-panel]")];
   const reading = page.querySelector("[data-research-reading]");
+  const scrollIndicator = page.querySelector("[data-research-scroll-indicator]");
+  const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
 
   if (!tablist || !tabs.length || !panels.length) return;
 
-  const activate = (tab, { focus = false, resetScroll = true } = {}) => {
+  let activeIndex = tabs.findIndex((tab) => tab.getAttribute("aria-selected") === "true");
+  if (activeIndex < 0) activeIndex = 0;
+  let isSwitching = false;
+  let transitionTimer;
+
+  const updateScrollIndicator = () => {
+    if (!reading || !scrollIndicator) return;
+    const scrollable = reading.scrollHeight > reading.clientHeight + 1;
+    const visibleRatio = scrollable ? reading.clientHeight / reading.scrollHeight : 1;
+    const travel = 100 - visibleRatio * 100;
+    const progress = scrollable ? reading.scrollTop / (reading.scrollHeight - reading.clientHeight) : 0;
+    scrollIndicator.style.height = `${visibleRatio * 100}%`;
+    scrollIndicator.style.top = `${travel * progress}%`;
+    scrollIndicator.parentElement?.classList.toggle("is-visible", scrollable);
+  };
+
+  const activate = (tab, { focus = false, resetScroll = true, animate = true } = {}) => {
+    if (reduceMotion.matches) animate = false;
     const target = tab.dataset.researchTab;
+    const nextIndex = tabs.indexOf(tab);
+    if (nextIndex === activeIndex && animate) {
+      if (focus) tab.focus();
+      return;
+    }
+    if (isSwitching) return;
+
+    const outgoing = panels[activeIndex];
+    const incoming = panels[nextIndex];
+    const direction = nextIndex > activeIndex ? "down" : "up";
+    page.dataset.researchDirection = direction;
 
     for (const item of tabs) {
       const selected = item === tab;
@@ -19,13 +49,42 @@ function setupResearchTabs() {
       item.tabIndex = selected ? 0 : -1;
     }
 
-    for (const panel of panels) {
-      const selected = panel.dataset.researchPanel === target;
-      panel.classList.toggle("is-active", selected);
-      panel.hidden = !selected;
+    if (resetScroll && reading) reading.scrollTop = 0;
+
+    if (!animate) {
+      activeIndex = nextIndex;
+      for (const panel of panels) {
+        const selected = panel.dataset.researchPanel === target;
+        panel.classList.toggle("is-active", selected);
+        panel.hidden = !selected;
+        panel.setAttribute("aria-hidden", String(!selected));
+      }
+      window.requestAnimationFrame(updateScrollIndicator);
+      if (focus) tab.focus();
+      return;
     }
 
-    if (resetScroll && reading) reading.scrollTop = 0;
+    isSwitching = true;
+    incoming.hidden = false;
+    incoming.setAttribute("aria-hidden", "false");
+    outgoing.setAttribute("aria-hidden", "true");
+    incoming.classList.add("is-entering");
+    outgoing.classList.add("is-leaving");
+    void incoming.offsetWidth;
+    page.classList.add("is-research-switching");
+
+    window.clearTimeout(transitionTimer);
+    transitionTimer = window.setTimeout(() => {
+      outgoing.hidden = true;
+      outgoing.classList.remove("is-active", "is-leaving");
+      incoming.classList.remove("is-entering");
+      incoming.classList.add("is-active");
+      page.classList.remove("is-research-switching");
+      activeIndex = nextIndex;
+      isSwitching = false;
+      updateScrollIndicator();
+    }, 320);
+
     if (focus) tab.focus();
   };
 
@@ -49,7 +108,10 @@ function setupResearchTabs() {
   });
 
   const initial = tabs.find((tab) => tab.getAttribute("aria-selected") === "true") || tabs[0];
-  activate(initial, { resetScroll: false });
+  activate(initial, { resetScroll: false, animate: false });
+  reading?.addEventListener("scroll", updateScrollIndicator, { passive: true });
+  window.addEventListener("resize", updateScrollIndicator, { passive: true });
+  window.addEventListener("load", updateScrollIndicator, { once: true });
 }
 
 function setupPerformanceCarousel() {
@@ -65,6 +127,9 @@ function setupPerformanceCarousel() {
   if (!slides.length || !previous || !next || !current) return;
 
   let activeIndex = 0;
+  let isAnimating = false;
+  let transitionTimer;
+  const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
 
   const loadFrame = (slide) => {
     const frame = slide.querySelector("iframe[data-src]");
@@ -76,20 +141,54 @@ function setupPerformanceCarousel() {
     if (frame?.hasAttribute("src")) frame.removeAttribute("src");
   };
 
-  const show = (index) => {
-    activeIndex = (index + slides.length) % slides.length;
+  const show = (index, { animate = true } = {}) => {
+    if (reduceMotion.matches) animate = false;
+    const nextIndex = (index + slides.length) % slides.length;
+    if (nextIndex === activeIndex && animate) return;
+    if (isAnimating) return;
+    const outgoing = slides[activeIndex];
+    const incoming = slides[nextIndex];
+    const direction = index > activeIndex || (activeIndex === slides.length - 1 && nextIndex === 0) ? "next" : "previous";
 
-    slides.forEach((slide, slideIndex) => {
-      const selected = slideIndex === activeIndex;
-      slide.classList.toggle("is-active", selected);
-      slide.hidden = !selected;
-      slide.setAttribute("aria-hidden", String(!selected));
-      if (selected) loadFrame(slide);
-      else unloadFrame(slide);
-    });
+    if (!animate) {
+      activeIndex = nextIndex;
+      slides.forEach((slide, slideIndex) => {
+        const selected = slideIndex === activeIndex;
+        slide.classList.toggle("is-active", selected);
+        slide.hidden = !selected;
+        slide.setAttribute("aria-hidden", String(!selected));
+        if (selected) loadFrame(slide);
+        else unloadFrame(slide);
+      });
+      current.textContent = String(activeIndex + 1).padStart(2, "0");
+      return;
+    }
 
-    current.textContent = String(activeIndex + 1).padStart(2, "0");
-    if (viewport) viewport.scrollTop = 0;
+    isAnimating = true;
+    carousel.dataset.carouselDirection = direction;
+    incoming.hidden = false;
+    incoming.setAttribute("aria-hidden", "false");
+    incoming.classList.add("is-entering");
+    outgoing.classList.add("is-leaving");
+    loadFrame(incoming);
+    void incoming.offsetWidth;
+    carousel.classList.add("is-sliding");
+
+    window.clearTimeout(transitionTimer);
+    transitionTimer = window.setTimeout(() => {
+      outgoing.hidden = true;
+      outgoing.setAttribute("aria-hidden", "true");
+      outgoing.classList.remove("is-active", "is-leaving");
+      incoming.classList.remove("is-entering");
+      incoming.classList.add("is-active");
+      unloadFrame(outgoing);
+      carousel.classList.remove("is-sliding");
+      if (viewport) viewport.style.removeProperty("height");
+      activeIndex = nextIndex;
+      isAnimating = false;
+      current.textContent = String(activeIndex + 1).padStart(2, "0");
+      if (viewport) viewport.scrollTop = 0;
+    }, 380);
   };
 
   previous.addEventListener("click", () => show(activeIndex - 1));
@@ -132,7 +231,7 @@ function setupPerformanceCarousel() {
     show(activeIndex + (distanceX < 0 ? 1 : -1));
   }, { passive: true });
 
-  show(0);
+  show(0, { animate: false });
 }
 
 setupResearchTabs();
