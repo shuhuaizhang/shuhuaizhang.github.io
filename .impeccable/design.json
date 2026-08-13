@@ -127,31 +127,46 @@
       "research-metadata": {
         "role": "neutral",
         "displayName": "Research Metadata Slate",
-        "canonical": "#506168",
+        "canonical": "#42545c",
         "tonalRamp": [
-          "oklch(15% 0.024 224.7)",
-          "oklch(27% 0.024 224.7)",
-          "oklch(39% 0.024 224.7)",
-          "oklch(51% 0.024 224.7)",
-          "oklch(63% 0.024 224.7)",
-          "oklch(75% 0.024 224.7)",
-          "oklch(87% 0.024 224.7)",
-          "oklch(95% 0.024 224.7)"
+          "oklch(15% 0.026 226.8)",
+          "oklch(27% 0.026 226.8)",
+          "oklch(39% 0.026 226.8)",
+          "oklch(51% 0.026 226.8)",
+          "oklch(63% 0.026 226.8)",
+          "oklch(75% 0.026 226.8)",
+          "oklch(87% 0.026 226.8)",
+          "oklch(95% 0.026 226.8)"
         ]
       },
-      "research-mist-core": {
+      "research-reading-surface": {
         "role": "primary",
-        "displayName": "Mineral Mist Core",
-        "canonical": "rgba(211, 222, 223, 0.76)",
+        "displayName": "Research Reading Surface",
+        "canonical": "rgba(224, 231, 231, 0.94)",
         "tonalRamp": [
-          "oklch(15% 0.012 198 / .76)",
-          "oklch(27% 0.012 198 / .76)",
-          "oklch(39% 0.012 198 / .76)",
-          "oklch(51% 0.012 198 / .76)",
-          "oklch(63% 0.012 198 / .76)",
-          "oklch(75% 0.012 198 / .76)",
-          "oklch(87% 0.012 198 / .76)",
-          "oklch(95% 0.012 198 / .76)"
+          "oklch(15% 0.008 198 / .94)",
+          "oklch(27% 0.008 198 / .94)",
+          "oklch(39% 0.008 198 / .94)",
+          "oklch(51% 0.008 198 / .94)",
+          "oklch(63% 0.008 198 / .94)",
+          "oklch(75% 0.008 198 / .94)",
+          "oklch(87% 0.008 198 / .94)",
+          "oklch(95% 0.008 198 / .94)"
+        ]
+      },
+      "research-reading-edge": {
+        "role": "primary",
+        "displayName": "Research Reading Edge",
+        "canonical": "rgba(211, 222, 223, 0.78)",
+        "tonalRamp": [
+          "oklch(15% 0.012 198 / .78)",
+          "oklch(27% 0.012 198 / .78)",
+          "oklch(39% 0.012 198 / .78)",
+          "oklch(51% 0.012 198 / .78)",
+          "oklch(63% 0.012 198 / .78)",
+          "oklch(75% 0.012 198 / .78)",
+          "oklch(87% 0.012 198 / .78)",
+          "oklch(95% 0.012 198 / .78)"
         ]
       },
       "nav-light-muted": {
@@ -505,9 +520,9 @@
       "name": "Research Reading Field",
       "kind": "custom",
       "refersTo": "research-reading-field",
-      "description": "A soft-edged mineral mist keeps the painterly canvas perceptible behind a ruled archive and subtle overflow indicator.",
+      "description": "A high-clarity mineral veil suppresses painterly lines across the text measure while narrow translucent edges and a subtle overflow indicator preserve the shared canvas.",
       "html": "<div class=\"ds-research-field\"><section class=\"ds-research-reading\"><header class=\"ds-research-heading\"><h2>Publications</h2></header><article class=\"ds-paper\"><div><h3>Research title</h3><p>with collaborators</p><p class=\"ds-paper-venue\">Working paper</p></div><a href=\"#\">PDF <svg aria-hidden=\"true\" viewBox=\"0 0 12 12\"><path d=\"M3 9 9 3M4 3h5v5\"/></svg></a></article></section><span class=\"ds-scroll-track\" aria-hidden=\"true\"><span></span></span></div>",
-      "css": ".ds-research-field { position: relative; overflow: hidden; border-block: 1px solid rgba(245,247,246,.3); background: #687b83; } .ds-research-reading { padding: clamp(34px,4.2vw,54px) clamp(34px,4.5vw,58px); background: linear-gradient(90deg,rgba(195,209,212,.03) 0%,rgba(202,215,217,.65) 11%,rgba(211,222,223,.76) 76%,rgba(195,209,212,.05) 100%); color: #18242b; font-family: \"Archivo\", \"Arial Narrow\", sans-serif; -webkit-mask-image: linear-gradient(180deg,transparent 0,#000 28px,#000 calc(100% - 28px),transparent 100%); mask-image: linear-gradient(180deg,transparent 0,#000 28px,#000 calc(100% - 28px),transparent 100%); } .ds-research-field::before, .ds-research-field::after { position: absolute; z-index: 2; top: 0; bottom: 0; width: clamp(24px,3.8vw,52px); content: \"\"; pointer-events: none; } .ds-research-field::before { left: 0; background: linear-gradient(90deg,rgba(77,94,101,.18),transparent); } .ds-research-field::after { right: 0; background: linear-gradient(270deg,rgba(86,101,108,.2),transparent); } .ds-scroll-track { position: absolute; z-index: 4; top: 34px; right: 8px; bottom: 34px; width: 1px; background: rgba(24,36,43,.13); } .ds-scroll-track > span { position: absolute; top: 0; left: -1px; width: 3px; height: 38%; background: rgba(66,84,92,.68); } .ds-research-heading { padding-bottom: 24px; border-bottom: 1px solid #18242b; } .ds-research-heading h2 { margin: 0; font-size: clamp(2rem,3.2vw,3rem); font-stretch: 84%; font-weight: 570; letter-spacing: -.032em; line-height: 1; } .ds-paper { display: grid; grid-template-columns: minmax(0,1fr) 104px; gap: clamp(28px,4vw,58px); padding: 28px 0 32px; border-bottom: 1px solid rgba(24,36,43,.24); } .ds-paper h3 { margin: 0; font-size: clamp(1.08rem,1.42vw,1.3rem); font-stretch: 94%; font-weight: 600; letter-spacing: -.022em; line-height: 1.34; transition: color 180ms ease-out; } .ds-paper:hover h3 { color: #8f4f3a; } .ds-paper p { margin: 11px 0 0; color: #506168; font-size: .88rem; line-height: 1.55; } .ds-paper .ds-paper-venue { color: #18242b; } .ds-paper > a { justify-self: end; align-self: start; display: inline-flex; align-items: center; gap: 6px; border-bottom: 1px solid currentColor; color: inherit; text-decoration: none; font-size: .76rem; font-weight: 630; line-height: 1.7; } .ds-paper svg { width: 11px; height: 11px; fill: none; stroke: currentColor; stroke-linecap: square; stroke-width: 1.4; } .ds-paper > a:focus-visible { outline: 2px solid #8f4f3a; outline-offset: 4px; }"
+      "css": ".ds-research-field { position: relative; overflow: hidden; border-block: 1px solid rgba(245,247,246,.3); background: #687b83; } .ds-research-reading { padding: clamp(34px,4.2vw,54px) clamp(34px,4.5vw,58px); background: linear-gradient(90deg,rgba(211,222,223,.78) 0,rgba(224,231,231,.94) clamp(22px,2.4vw,34px),rgba(224,231,231,.94) calc(100% - clamp(22px,2.4vw,34px)),rgba(211,222,223,.78) 100%); color: #18242b; font-family: \"Archivo\", \"Arial Narrow\", sans-serif; } .ds-research-field::before, .ds-research-field::after { position: absolute; z-index: 2; top: 0; bottom: 0; width: clamp(12px,1.6vw,22px); content: \"\"; pointer-events: none; } .ds-research-field::before { left: 0; background: linear-gradient(90deg,rgba(77,94,101,.12),transparent); } .ds-research-field::after { right: 0; background: linear-gradient(270deg,rgba(86,101,108,.13),transparent); } .ds-scroll-track { position: absolute; z-index: 4; top: 34px; right: 8px; bottom: 34px; width: 1px; background: rgba(24,36,43,.13); } .ds-scroll-track > span { position: absolute; top: 0; left: -1px; width: 3px; height: 38%; background: rgba(66,84,92,.68); } .ds-research-heading { padding-bottom: 24px; border-bottom: 1px solid #18242b; } .ds-research-heading h2 { margin: 0; font-size: clamp(2rem,3.2vw,3rem); font-stretch: 84%; font-weight: 570; letter-spacing: -.032em; line-height: 1; } .ds-paper { display: grid; grid-template-columns: minmax(0,1fr) 104px; gap: clamp(28px,4vw,58px); padding: 28px 0 32px; border-bottom: 1px solid rgba(24,36,43,.24); } .ds-paper h3 { margin: 0; font-size: clamp(1.08rem,1.42vw,1.3rem); font-stretch: 94%; font-weight: 600; letter-spacing: -.022em; line-height: 1.34; transition: color 180ms ease-out; } .ds-paper:hover h3 { color: #8f4f3a; } .ds-paper p { margin: 11px 0 0; color: #42545c; font-size: .88rem; line-height: 1.55; } .ds-paper .ds-paper-venue { color: #18242b; } .ds-paper > a { justify-self: end; align-self: start; display: inline-flex; align-items: center; gap: 6px; border-bottom: 1px solid currentColor; color: inherit; text-decoration: none; font-size: .76rem; font-weight: 630; line-height: 1.7; } .ds-paper svg { width: 11px; height: 11px; fill: none; stroke: currentColor; stroke-linecap: square; stroke-width: 1.4; } .ds-paper > a:focus-visible { outline: 2px solid #8f4f3a; outline-offset: 4px; }"
     },
     {
       "name": "Performance Carousel Slide",
@@ -540,7 +555,7 @@
     "keyCharacteristics": [
       "Two coordinated painterly registers within one identity.",
       "Transparent, horizontal, left-grouped navigation on every primary route.",
-      "Full-viewport fields with an edge-dissolving mineral reading mist rather than a white card.",
+      "Full-viewport fields with a high-clarity mineral reading veil rather than a white card.",
       "Compressed sans type shared across the identity; measured serif type reserved for music.",
       "Ruled research records and 16:9 performance media with restrained, progressive motion."
     ],
@@ -609,7 +624,7 @@
     "dos": [
       "Do preserve the full generated portrait on About and the fixed generated painterly canvases on Research and Another Me.",
       "Do keep the transparent navigation horizontal, visible, and grouped at the left on every viewport.",
-      "Do preserve Research as a two-node selector plus edge-dissolving mineral reading mist, with Publications active by default and a subtle overflow-only scroll indicator.",
+      "Do preserve Research as a two-node selector plus high-clarity mineral reading veil, with Publications active by default and a subtle overflow-only scroll indicator.",
       "Do preserve the one-at-a-time horizontal performance carousel, post-exit iframe unloading, and real 16:9 media.",
       "Do use contained pane scrolling only above 900px and whole-page scrolling below it.",
       "Do preserve self-hosted Archivo across the identity and reserve self-hosted Alegreya for musical narrative.",
@@ -622,7 +637,7 @@
       "Don't turn the performance archive back into eight stacked rows; keep one active record in the carousel.",
       "Don't introduce a permanent side rail, far-separated navigation, mobile drawer, decorative numbering, badges, or invented metadata.",
       "Don't place the biography in a detached card or pale band, or obscure the portrait with interface chrome.",
-      "Don't harden the Research mist into an opaque white page or floating card; do not round the reading surfaces or media, add shadows, or introduce backdrop blur.",
+      "Don't turn the Research veil into a stark white floating card or make it transparent enough for painterly lines to compete with text; do not round the reading surfaces or media, add shadows, or introduce backdrop blur.",
       "Don't replace directional exchanges with a uniform site-wide fade.",
       "Don't spread apricot across general-purpose surfaces; its rarity carries identity and state.",
       "Don't use Alegreya for academic headings, navigation, years, controls, or credits.",

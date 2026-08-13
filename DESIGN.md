@@ -10,8 +10,9 @@ colors:
   paper: "#f5f7f6"
   ink: "#18242b"
   muted-slate: "#5c6d73"
-  research-metadata: "#506168"
-  research-mist-core: "rgba(211, 222, 223, 0.76)"
+  research-metadata: "#42545c"
+  research-reading-surface: "rgba(224, 231, 231, 0.94)"
+  research-reading-edge: "rgba(211, 222, 223, 0.78)"
   nav-light-muted: "rgba(245, 247, 246, 0.86)"
   home-copy-muted: "rgba(245, 247, 246, 0.92)"
   academic-focus: "#8f4f3a"
@@ -89,7 +90,7 @@ components:
     typography: "{typography.body}"
     width: "260px"
   research-reading-field:
-    backgroundColor: "{colors.research-mist-core}"
+    backgroundColor: "{colors.research-reading-surface}"
     textColor: "{colors.ink}"
     padding: "clamp(34px, 4.2vw, 54px) clamp(34px, 4.5vw, 58px)"
     width: "100%"
@@ -132,7 +133,7 @@ The system is experiential but exact. About lets a full portrait field carry bio
 
 - Two coordinated painterly registers within one identity.
 - Transparent, horizontal, left-grouped navigation on every primary route.
-- Full-viewport fields with an edge-dissolving mineral reading mist rather than a white card.
+- Full-viewport fields with a high-clarity mineral reading veil rather than a white card.
 - Compressed sans type shared across the identity; measured serif type reserved for music.
 - Ruled research records and 16:9 performance media with restrained, progressive motion.
 
@@ -147,7 +148,8 @@ The palette moves from cool slate and mineral blue to deep aubergine and ivory. 
 - **Research Canvas Slate** (`#687b83`): The Research route fallback and browser theme color beneath its generated mineral image.
 - **Research Image Base** (`#73858c`): The image-backed layer behind the fixed Research canvas.
 - **Mineral Ground** (`#e9eff0`): The pale academic ground and scrollbar track.
-- **Mineral Mist Core** (`rgba(211, 222, 223, 0.76)`): The most legible center of the Research reading field; its horizontal gradient releases toward near-transparent edges so the painterly canvas remains perceptible.
+- **Research Reading Surface** (`rgba(224, 231, 231, 0.94)`): The stable cool-gray veil behind Research copy. It suppresses painterly lines across the text measure while remaining visibly related to the canvas.
+- **Research Reading Edge** (`rgba(211, 222, 223, 0.78)`): A narrow edge tone that lets the reading veil meet the painterly canvas without weakening the text field.
 
 ### Secondary
 
@@ -172,7 +174,7 @@ The palette moves from cool slate and mineral blue to deep aubergine and ivory. 
 - **Biography Paper** (`rgba(245, 247, 246, 0.92)`): Supporting biography copy over the portrait.
 - **Blue-Black Ink** (`#18242b`): Primary type and strong rules inside the academic pane.
 - **Muted Slate** (`#5c6d73`): Secondary academic text on pale surfaces.
-- **Research Metadata Slate** (`#506168`): Author metadata within research rows.
+- **Research Metadata Slate** (`#42545c`): Author metadata within research rows, darkened for reliable small-text contrast.
 - **Academic Rule** (`rgba(24, 36, 43, 0.24)`): Dividers between research records.
 - **Light Field Rule** (`rgba(242, 246, 245, 0.3)`): Fine boundaries over dark academic fallback surfaces.
 - **Video Black** (`#0c0d0e`): The stable aperture behind embedded performance video.
@@ -211,7 +213,7 @@ All three primary routes are independent documents organized on a centered shell
 
 About is one portrait-backed field with a minimum height of `100svh`. A two-column grid reserves the left for the staggered name, biography, and email and the right for the portrait. Layered gradients protect the reading column and dissolve before the face. There is no separate biography band or footer on the route.
 
-Research is also a `100svh` canvas, but its generated mineral painterly background is fixed behind a two-column working layout. The left rail contains the page title and a vertical two-node category selector; Publications is the default. The right side is a mineral reading mist rather than a page or card: its translucent center protects legibility, its side edges dissolve into the image, its top and bottom soften through a mask, and a one-pixel custom track quietly reports scroll progress. Research records remain ruled rows inside that contained desktop scroller, with evidence links in a narrow right column. The tablist supports click plus arrow, Home, and End navigation.
+Research is also a `100svh` canvas, but its generated mineral painterly background is fixed behind a two-column working layout. The left rail contains the page title and a vertical two-node category selector; Publications is the default. The right side uses a high-clarity mineral reading veil rather than a white page or card: a near-opaque cool center suppresses painterly lines across the text measure, while only narrow side edges retain controlled translucency. There is no mask over the content itself, so headings and rows remain fully opaque at the viewport limits. A one-pixel custom track quietly reports scroll progress. Research records remain ruled rows inside that contained desktop scroller, with evidence links in a narrow right column. The tablist supports click plus arrow, Home, and End navigation.
 
 Another Me uses the same two-column canvas against a fixed generated aubergine-and-apricot abstract background. The title and introduction stay at left; a hard-edged carousel fills the right and exposes one of eight performance records at a time. Each active record pairs 16:9 media with year, title, detail, and credit. Previous and next controls, a numeric status, arrow/Home/End keys, and horizontal touch swipes change the active record.
 
@@ -225,7 +227,7 @@ At 1040px, the two working canvases narrow their left rail and gap. At 900px, th
 
 ## Elevation & Depth
 
-There are no shadows, radii, or lifted surfaces. Depth comes from the generated background images, directional tonal overlays, a soft-edged mineral reading mist, the translucent square music pane, one-pixel rules, and the apricot surround around a black video aperture. Neither reading surface uses backdrop blur; translucency belongs to the painterly field rather than to a glass-card effect.
+There are no shadows, radii, or lifted surfaces. Depth comes from the generated background images, directional tonal overlays, a high-clarity mineral reading veil, the translucent square music pane, one-pixel rules, and the apricot surround around a black video aperture. Neither reading surface uses backdrop blur; controlled translucency belongs to the painterly field rather than to a glass-card effect.
 
 Route changes use progressive cross-document View Transitions where supported and follow the spatial order About → Research → Another Me. Moving forward sends the old page canvas left over 300ms and brings the new canvas from the right over 440ms; moving backward reverses both directions. The transparent navigation has its own stable transition layer and receives no canvas translation, while reloads receive no slide. Research category changes use a vertical 280/300ms exchange: Publications → Working Papers moves upward, and the reverse moves downward. Another Me uses a horizontal film-strip exchange: next sends the current performance left and brings the next from the right over 360/380ms; previous reverses it. The About boundary line draws over 720ms, and navigation underlines draw over 220ms. Unsupported browsers use ordinary navigation, and reduced-motion preferences collapse all animation and transition durations to `0.01ms` and restore automatic scrolling.
 
@@ -235,7 +237,7 @@ Route changes use progressive cross-document View Transitions where supported an
 
 ## Shapes
 
-The form language is square and architectural. Navigation underlines, category nodes, research rules, carousel controls, media surrounds, focus outlines, and external-link arrows all use hard edges, while only the atmospheric limits of the Research reading field dissolve. The 11px Research nodes sit on a one-pixel line, and the performance surround frames a black 16:9 aperture with no radius or shadow.
+The form language is square and architectural. Navigation underlines, category nodes, research rules, carousel controls, media surrounds, focus outlines, and external-link arrows all use hard edges, while only the narrow side limits of the Research reading field soften. The 11px Research nodes sit on a one-pixel line, and the performance surround frames a black 16:9 aperture with no radius or shadow.
 
 **The Square Media Rule.** Performance media remains 16:9, square-cornered, and attached to its active descriptive record.
 
@@ -264,7 +266,7 @@ The form language is square and architectural. Navigation underlines, category n
 
 ### Research Reading Field and Rows
 
-- **Field:** A translucent mineral mist with faint top and bottom rules, softly masked vertical limits, side gradients that dissolve into the painterly canvas, and its own desktop scroll. A one-pixel track with a three-pixel moving indicator appears only when the archive overflows.
+- **Field:** A high-clarity cool mineral veil with faint top and bottom rules and its own desktop scroll. The main text measure stays near-opaque; only narrow side edges soften into the painterly canvas, and no mask reduces the opacity of headings or rows. A one-pixel track with a three-pixel moving indicator appears only when the archive overflows.
 - **Rows:** Each record uses a flexible factual column and a 104px evidence-link column, separated by generous space and an academic rule. Paper-title hover uses Academic Focus Clay.
 - **Links:** Compact Archivo labels use a one-pixel underline and an 11px square-capped external arrow. On small screens, links move below metadata and align left; the field joins natural document flow and removes its custom indicator.
 
@@ -290,7 +292,7 @@ There is no generic card, chip, form, or floating-button primitive. The tab and 
 
 - **Do** preserve the full generated portrait on About and the fixed generated painterly canvases on Research and Another Me.
 - **Do** keep the transparent navigation horizontal, visible, and grouped at the left on every viewport.
-- **Do** preserve Research as a two-node selector plus edge-dissolving mineral reading mist, with Publications active by default and a subtle overflow-only scroll indicator.
+- **Do** preserve Research as a two-node selector plus high-clarity mineral reading veil, with Publications active by default and a subtle overflow-only scroll indicator.
 - **Do** preserve the one-at-a-time horizontal performance carousel, post-exit iframe unloading, and real 16:9 media.
 - **Do** use contained pane scrolling only above 900px and whole-page scrolling below it.
 - **Do** preserve self-hosted Archivo across the identity and reserve self-hosted Alegreya for musical narrative.
@@ -304,7 +306,7 @@ There is no generic card, chip, form, or floating-button primitive. The tab and 
 - **Don't** turn the performance archive back into eight stacked rows; keep one active record in the carousel.
 - **Don't** introduce a permanent side rail, far-separated navigation, mobile drawer, decorative numbering, badges, or invented metadata.
 - **Don't** place the biography in a detached card or pale band, or obscure the portrait with interface chrome.
-- **Don't** harden the Research mist into an opaque white page or floating card; do not round the reading surfaces or media, add shadows, or introduce backdrop blur.
+- **Don't** turn the Research veil into a stark white floating card or make it transparent enough for painterly lines to compete with text; do not round the reading surfaces or media, add shadows, or introduce backdrop blur.
 - **Don't** replace directional exchanges with a uniform site-wide fade.
 - **Don't** spread apricot across general-purpose surfaces; its rarity carries identity and state.
 - **Don't** use Alegreya for academic headings, navigation, years, controls, or credits.
