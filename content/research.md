@@ -19,6 +19,7 @@ link.CNKI: https://kns.cnki.net/kcms2/article/abstract?v=CK5qQJ1_U0zD-rkgwoh5GPn
 ## Understanding the Mechanism of Altruism in Large Language Models
 year: 2026
 authors: with Shu Wang, Zijun Yao, Chuanhao Li, Xiaozhi Wang, Songfa Zhong, and Tracy Xiao Liu
+status: Revision Requested
 link.ArXiv: https://arxiv.org/abs/2604.19260
 
 ## When Experimental Economics Meets Large Language Models: Tactics with Evidence
